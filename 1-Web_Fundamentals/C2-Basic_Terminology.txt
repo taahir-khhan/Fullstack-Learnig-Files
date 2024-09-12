@@ -1,0 +1,18 @@
+
+Packet      :- A small unit of data that is transmitted over the internet.
+
+Router      :- A device that routes packets of data between different networks.
+
+IP Address  :- A unique identifier assigned to each device on a network, used to route data to the correct destination.
+
+Domain Name :- A human readable name that is used to identify a website, such as Rekhta.org
+
+DNS         :- The Domain Name System is responsible for translating domain name into IP Address.
+
+HTTP        :- The Hyper Text Transfer Protocol is used to transfer data between client (such a Browser) and a server (such as a website).
+
+HTTPS       :- An encrypted version of HTTP that is used to provide secure communication between client and server.
+
+SSL/TLS     :- The Secure Socket Layer & Transport Layer Security protocols are used to provide secure communication over the internet.
+
+Hosting     :- Web hosting is an online service that allows you to publish your website files onto the internet, So anyone who has access to the internet has access to your website.

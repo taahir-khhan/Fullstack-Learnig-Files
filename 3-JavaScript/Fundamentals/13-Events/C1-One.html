@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events </title>
+    <style>
+      div.parent, div.child {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 50px;
+            border: 1px solid black;
+            margin-top: 20px;
+      }
+    </style>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+
+    <h2>Amazing image</h2>
+
+    <div>
+
+        <ul id="images">
+
+            <li>
+                <img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop">
+            </li>
+
+            <li>
+                <img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="">
+            </li>
+
+            <li>
+                <img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="">
+            </li>
+
+            <li>
+                <img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" >
+            </li>
+
+
+            <!--   Onclick (1st Approach)
+
+                  - It is the one way we can add events inline, to a perticular element.
+
+                  - It is not the best thing to do, because it is not scalable & modern way of adding events to an element.
+            -->
+
+            <li>
+                <img width="200px" id="prayer1" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('Prayer1 is clicked')">
+            </li>
+
+
+            <li>
+                <img width="200px" id="prayer2" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"  alt="">
+            </li>
+
+            <li>
+                <a style="color: aliceblue;" href="https://google.com" id="google">Google</a>
+            </li>
+        </ul>
+
+        <!-- TimeStamp -->
+
+        <div>TimeStamp: <span id="time"></span></div>
+
+        <div class="parent">
+            parent
+            <div class="child">Child</div>
+        </div>
+   </div>
+
+   <img width="200px" id="owl2" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" >
+
+
+   <script type="module" src="./one.js"></script>
+</body>
+</html>

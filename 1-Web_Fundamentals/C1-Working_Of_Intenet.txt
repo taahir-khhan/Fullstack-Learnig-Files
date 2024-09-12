@@ -1,0 +1,12 @@
+Network :- 
+      - A network is a group of computers or other devices which are connected to each other with the intention of communication.
+
+Internet :- 
+      - Short for Interconnected networks, And also known as network of networks
+      - Millions of of small networks are connected with each other, which empowers the whole internet, that's why it is known as network of networks.
+      
+Working :- 
+      - At a high level, the internet works by connecting millions of devices and computer systems together using a set of 
+      standardized protocols, through wired/wireless medium, to transfer the information with each other.
+      - These protocols define how information is exchanged between devices and ensure that data is transmitted reliably and securely. 
+      Ex- TCP, IP, HTTP etc.

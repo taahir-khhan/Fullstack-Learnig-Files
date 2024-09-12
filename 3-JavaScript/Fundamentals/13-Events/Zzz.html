@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Practice</title>
+      <style>
+            div {
+                  background-color: #6e4b4b;
+                  padding: 10px;
+                  border-radius: 7px;
+                  margin-bottom: 10px;
+            }
+      </style>
+</head>
+<body style="background-color: #212121; color: #fff;">
+      <div class="para">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum molestias delectus id minus odit esse illo ducimus ipsam, vero animi numquam quisquam eaque consectetur, repudiandae et voluptate maxime iusto ipsa.</p>
+      </div>
+      <div class="para">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum molestias delectus id minus odit esse illo ducimus ipsam, vero animi numquam quisquam eaque consectetur, repudiandae et voluptate maxime iusto ipsa.</p>
+      </div>
+      <div class="para">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum molestias delectus id minus odit esse illo ducimus ipsam, vero animi numquam quisquam eaque consectetur, repudiandae et voluptate maxime iusto ipsa.</p>
+      </div>
+
+      <div id="paragraph" class="another_para">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque dignissimos laboriosam officiis quidem corrupti? Tenetur esse aperiam doloremque incidunt expedita est voluptates vero similique, adipisci et, aliquam ducimus, totam praesentium!
+      </div>
+</body>
+<script>
+
+      // HTML Collection
+      // const para = document.getElementsByClassName('para');
+      // console.log(para);
+
+      // const para2 = document.getElementsByTagName('div');
+      // console.log(para2);
+
+      // Node List
+      // const para3 = document.querySelectorAll('.para');
+      // console.log(para3);
+
+      const para4 = document.getElementById('paragraph');
+      console.log(para4.id);
+      console.log(para4.className);
+      para4.setAttribute('title', 'Another Div re baba');
+      console.log(para4.title);
+      para4.style.backgroundColor = 'red';
+      para4.style.color = '#000';
+
+
+</script>
+</html>

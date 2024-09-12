@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with the required information</p>
+
+    <!-- Form 
+            - Represent a document section containing interactive controls for submitting information.
+            -> action = "URL"      
+                  - This attribute sends the data of form to specified URL.
+            -> method = "get/post" 
+                  - This attribute specifies how to send form data to the URL specified in action attribute.
+      -->
+
+    <form method="post" action='https://register-demo.freecodecamp.org'>
+      
+      <!-- Fieldset
+            - This elements is used to group related inputs & lables together in a web form.
+            - It is a block label element takes entire width of the screen.
+      -->
+      <fieldset>
+          <!-- Labels
+                  - It defines label for input elements.
+                  - These are inline elements
+                  -> for = "id-name" 
+                        -  This links the input element and the label together.
+            -->
+        <label for="first-name">Enter Your First Name:</label>
+        <input type="text" name="first-name" id="first-name" required />
+
+        <label for="last-name">Enter Your Last Name:</label>
+        <input type="text" name="last-name" id="last-name" required />
+
+        <label for="email">Enter Your Email:</label>
+        <input type="email" id="email" name="email"  required />
+
+        <!-- minlength
+            - The password length must be 8. below element
+        -->
+        <label for="old-pass">Old Password: </label>
+        <input type="password" name="old-pass" id="old-pass" minlength="8" required>
+
+        <!-- pattern
+            - If we use pattern attribute, we shouldn't use minlength, because it is already defined in the pattern.
+            - The below pattern require, the password must contain a-z, 0-5 & length should be 8.
+        -->
+        <label for="new-password">Create a New Password:</label>
+        <input type="password"  name="new-password" id="new-password" pattern="[a-z0-5]{8,}" required />
+      </fieldset>
+
+      <fieldset>
+        <!-- Radio Input
+            - To make radio buttons selectable one at a time, give them same name attribute.
+         -->
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" /> Personal Account</label>
+
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business Account</label>
+
+        <label for="terms-and-conditions">
+          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="inline" /> 
+          I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <!-- File
+            - Upload files from your device
+         -->
+        <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
+
+        <!-- Number
+            - Minimum number you can enter is 13 & maximum is 120
+         -->
+        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
+
+        <label for="referrer">How did you hear about us?
+            <!-- Dropdown
+                  - 
+            -->
+          <select id="referrer" name="referrer">
+            <option value="">(select one)</option>
+            <option value="1">freeCodeCamp News</option>
+            <option value="2">freeCodeCamp YouTube Channel</option>
+            <option value="3">freeCodeCamp Forum</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        
+        <label for="bio">Provide a bio:
+            <!-- Textarea
+                  - It takes input of multi line text.
+                  - row = "value" -> To increase the size in terms of height.
+                  - col = "value" -> To increase the size in terms of width.
+            -->
+          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+        </label>
+      </fieldset>
+      
+      <!-- Others important attributes
+            -> name = "name-of-the-input-element"
+                  - It is useful and good practice to provide each submittable element with a name attribute.
+                  - It is used to identify the element in the form submission.
+
+            -> placeholder = "text"
+                  - This attribute gives hint about, what to write in the input box.
+      -->
+
+      <!-- Submit Button
+            - It submits the whole form value into specified location.
+            - value = "text" - This shows the text of the button while displaying in the browser.
+      -->
+      <input type="submit" value="Submit" />
+    </form>
+
+  </body>
+</html>

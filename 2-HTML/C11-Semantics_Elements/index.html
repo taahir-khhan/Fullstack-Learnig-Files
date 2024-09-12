@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Semantics in HTML</title>
+      <style>
+            body {
+                  background-color: #212121;
+                  color: #fff;
+            }
+      </style>
+</head>
+<body>
+
+      <!--                              Semantic
+
+            - In programming, Semantics refers to the meaning of a piece of code.
+
+            - for example  "what purpose or role does that HTML element have" (rather than "what does it look like?".)
+      -->
+
+
+      <!--                            Semantic HTML
+
+            - It refers to the use of HTML markup to convey the meaning of the content on a web page, rather than just its appearance.
+
+            - This approach has several benefits. First, it helps search engines and other technologies to understand the structure and the purpose of content on your site.
+
+            - Second, it makes your content more accessible to people who use assistive technologies to navigate the web.
+
+            - And third, it makes your code easier to read and maintain, since the purpose of each element is clear.
+
+            - Every semantic element indicate to both users and search engines that this section of your website is specifically designed for this purpose i.e navigation, main-content, article, section, header etc.
+      -->
+
+
+      <!--          <header>
+
+            - includes the main title or logo, navigation links, and other elements that are common to every page on the site.
+
+            - It can create a clear separation between the header and the main content of your page, making it easier for users to understand and navigate your website.
+      -->
+
+      <!-- Non-semantic header -->
+      <div class="header">
+            <h1>My Site</h1>
+            <nav>
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+            </nav>
+      </div>
+    
+      <!-- Semantic header -->
+      <header>
+            <h1>My Site</h1>
+            <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+      </header>
+
+
+
+      <!--         <nav> - navigation
+
+            - It is used to mark up a section of a web page that contains navigation links.
+      -->
+
+      <!-- Non-Semantic Navigation -->
+      <div class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+      </div>
+
+      <!-- Semantic Navigation -->
+      <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+      </nav>
+
+
+
+      <!--         <main>
+
+            - It is used to mark up the main content area of a web page.
+      -->
+
+      <!-- Non-semantic main content -->
+      <div class="main-content">
+            <h2>About Us</h2>
+            <p>Welcome to our website. We are a company that specializes in widgets.</p>
+      </div>
+
+      <!-- Semantic main content -->
+      <main>
+            <h2>About Us</h2>
+            <p>Welcome to our website. We are a company that specializes in widgets.</p>
+      </main>
+
+
+
+      <!--         <article>
+
+            - It is used to represent a standalone piece of content, such as a blog post, news article, or product review.
+
+            - The content within the <article> tag should be self-contained and meaningful, and can include headings, paragraphs, images, and other types of content.
+      -->
+
+      <!-- Non-semantic article -->
+      <div class="article">
+            <h2>How to Make a Widget</h2>
+            <p>Widgets are great. Here's how to make one.</p>
+      </div>
+          
+      <!-- Semantic article -->
+      <article>
+            <h2>How to Make a Widget</h2>
+            <p>Widgets are great. Here's how to make one.</p>
+      </article>
+
+
+
+
+      <!--         <section>
+
+            - It is used to mark up sections of a web page that are thematically grouped together.
+
+            - This might include things like chapters or sections of a long article, or different parts of a product page.
+      -->
+
+      <section>
+            <h2>Section Title</h2>
+            <p>Section content goes here</p>
+      </section>
+
+
+
+
+
+      <!--         <footer>
+
+            - It is used to mark up the bottom section of a web page.
+
+            - which might include things like copyright information, contact details, or links to social media profiles.
+      -->
+
+      <!-- Non-semantic footer -->
+      <div class="footer">
+            <p>&copy; 2021 My Site</p>
+      </div>
+    
+      <!-- Semantic footer -->
+      <footer>
+            <p>&copy; 2021 My Site</p>
+      </footer>
+
+
+
+
+      <!--         <aside>
+
+            - It is used to mark up content that is related to the main content on a web page but is not an integral part of it.
+
+            - This might include things like supplementary information, advertisements, or related articles.
+      -->
+
+      <!-- Example -->
+      <div>
+            <article>
+              <h2>Article Title</h2>
+              <p>Article content goes here</p>
+            </article>
+            <aside>
+              <h3>Related Articles</h3>
+              <ul>
+                <li><a href="#">Article 1</a></li>
+                <li><a href="#">Article 2</a></li>
+                <li><a href="#">Article 3</a></li>
+              </ul>
+            </aside>
+      </div>
+
+
+
+      
+      <!--         <detail> and <summary>
+
+            - This tags are used to mark up a collapsible section of content.
+
+            - This might include things like supplementary information, advertisements, or related articles.
+      -->
+
+      <!-- Example -->
+      <details>
+            <summary>Click to expand</summary>
+            <p>Content goes here</p>
+      </details>
+
+
+
+      
+      <!--         <figure> and <figcaption>
+
+            - This tags are used to mark up a self-contained piece of content that is referenced from the main content of a web page.
+
+            - The <figure> tag is used to mark up the content itself, and the <figcaption> tag is used to mark up a caption or description for the content.
+      -->
+
+      <!-- Example -->
+      <figure>
+            <img src="./img/2109.jpg" alt="Image description" width="200" />
+            <figcaption>Caption of the image</figcaption>
+      </figure>
+
+
+
+      
+      <!--         <mark>
+
+            - It is used to mark up text that has been highlighted for some reason.
+
+            - This might include things like search results, or text that has been highlighted by a user.
+      -->
+
+      <!-- Example -->
+      <p>Here is some <mark>highlighted</mark> text.</p>
+
+
+      
+      
+      <!--         <time>
+
+            - It is used to mark up a date or time.
+
+      -->
+
+      <!-- Example -->
+      <p>The event will take place on <time datetime="2021-01-01">January 1st, 2021</time>.</p>
+
+
+
+      
+      <!--         <progress>
+
+            - It is used to mark up a progress bar.
+
+            - By using this tag, we can make it easier for users to understand the progress of a task.
+      -->
+
+      <!-- Example -->          
+      <progress value="70" max="100"></progress>
+
+
+
+      <!-- What about <div> and <span> ?
+
+            - The <div> and <span> tags are not semantic tags.
+
+            - They are used to mark up generic content areas, and do not convey any specific meaning.
+
+            - You should only use these tags if you have no other option.
+      -->
+
+      
+      </body>
+</html>

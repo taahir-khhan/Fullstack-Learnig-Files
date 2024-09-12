@@ -1,0 +1,25 @@
+ctrl + > or >   -> moving word by word
+
+ctrl + shift + < or > or ^  -> selecting line faster
+
+alt + up or down -> Move the lie up and down
+
+alt + shift + up + down ->  copy the line up and down
+
+ctrl + enter -> add a newline no matter the cursor
+
+ctrl + shift + enter -> add the line above
+
+ctrl + L -> Select the current line
+
+ctrl + shift + K  -> Delete the current line
+
+ctrl + D -> Find similar word
+
+Ctrl + U  -> Undo the match
+
+ctrl + P  ->  search files
+
+Ctrl + I  -> Trigger suggestion manually
+
+Ctrl + ~ -> Open terminal

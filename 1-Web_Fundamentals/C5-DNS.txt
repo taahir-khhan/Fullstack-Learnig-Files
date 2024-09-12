@@ -1,0 +1,20 @@
+DNS(Domain Name System) :-
+
+      - The Domain Name System is the phonebook of the Internet. Which takes a Domain Name and convert it to it’s corresponding IP Address, 
+      So browsers can fetch the data about that particular Domain Name. Like [nytime.com] or [espn.com] etc.
+
+      - Each device connected to the Internet has a unique IP address, which is used by other machines to find the device.
+
+      - DNS servers eliminate the need for humans to memorize IP addresses such as 192.168.1.1 (in IPv4), 
+      or more complex newer alphanumeric IP addresses such as 2400:cb00:2048:1::c629:d7a2 (in IPv6).
+      
+
+How they work ? :-
+
+      - The process of DNS resolution involves converting a hostname such as [www.example.com] 
+      into a computer-friendly IP address (such as 192.168.1.1).
+
+      - By using that IP Address browser fetch data from the server, where the files are stored.
+
+      - For the web browser, the DNS lookup occurs "behind the scenes" and requires
+      no interaction from the user’s computer apart from the initial request.
