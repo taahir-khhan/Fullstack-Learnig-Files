@@ -1,25 +1,15 @@
-
-// Important String Methods
+// ======== Important String Methods ========
 
 let myName = "Bruce Wayne";
 
-
 // 1) Finding the length of a string
 // console.log(myName.length);
-
-
-
 
 // 2) Retrieving a specific string character
 
 // console.log(myName[4]);
 // console.log(myName.at(45));               // Out of index value is Undefind
 // console.log(myName.charAt(9));            // But in this property empty string
-
-
-
-
-
 
 // 3) Testing if a string contains a substring
 
@@ -30,34 +20,25 @@ const browserName = "Chrome";
 // else
 // console.log("Not Found");
 
-
-
-
-
 // 4) Starts With &  Ends with
 
-let fname = "Thalaiva"
+let fname = "Thalaiva";
 
 // if (fname.startsWith("Thala")) {
 //       console.log("Yes");
-// } 
+// }
 // else {
 // console.log("No");
-// }  
-
+// }
 
 // if (fname.endsWith("ifa")) {
 //       console.log("Yes");
-// } 
+// }
 // else {
 // console.log("No");
-// } 
+// }
 
-
-
-
-
-// 5) Finding the position of a substring in a string 
+// 5) Finding the position of a substring in a string
 
 const str = "My name is tahir khan and my family name is khan";
 
@@ -65,22 +46,17 @@ const str = "My name is tahir khan and my family name is khan";
 // console.log(str.indexOf("tahir"));
 // console.log(str.indexOf("jahir"));
 
-
 // To find subsequent string (Simillar substring), after the 1st occurance
 
-let firstOcc = str.indexOf("khan")
-let lastOcc = str.indexOf("khan", firstOcc + 1); // Here it will start searching from 18th index. 
+let firstOcc = str.indexOf("khan");
+let lastOcc = str.indexOf("khan", firstOcc + 1); // Here it will start searching from 18th index.
 
 // console.log(firstOcc);
-// console.log(lastOcc);   
-
-
-
-
+// console.log(lastOcc);
 
 // 6) Extracting a substrings from a string
 
-const str2 = 'The quick brown fox jumps over the lazy dog.';
+const str2 = "The quick brown fox jumps over the lazy dog.";
 
 // console.log(str2.slice(31));
 // // Starts extracting from 31 index
@@ -91,31 +67,24 @@ const str2 = 'The quick brown fox jumps over the lazy dog.';
 // console.log(str2.slice(-4));
 // // Go backward
 
-// console.log(str2.slice(-9, -5));  
+// console.log(str2.slice(-9, -5));
 
-
-
-
-
-// 8 - Changing case
+// 8) Changing case
 
 const myName2 = "Tahir";
 
 // console.log(myName2.toUpperCase());
 // console.log(myName2.toLowerCase());
-// console.log(myName2);                // Doesn't affect the original value  
+// console.log(myName2);                // Doesn't affect the original value
 
-
-
-
-
-// 9 - Updating parts of String
+// 9) Updating parts of String
 
 const browserType = "mozilla";
 
-// console.log(browserType.replace("moz", "van"));
-// console.log(browserType); 
+console.log(browserType.replace("moz", "van"));
+console.log(browserType);
 
 // If the pattern is an empty string, the replacement is prepended to the start of the string.
 const myStr = "xxx ";
-// console.log(myStr.replace("", "_YYY_"));
+
+console.log(myStr.replace("", "_YYY_"));

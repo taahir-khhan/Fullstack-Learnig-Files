@@ -1,13 +1,11 @@
-
-const num = new Number("123");      // Converted to number i.e 123
+const num = new Number("123"); // Converted to number i.e 123
 console.log(num);
 
-const num2 = new Number("123abc");   // NaN
+const num2 = new Number("123abc"); // NaN
 console.log(num2);
 
-const num3 = new Number(undefined);   // NaN
+const num3 = new Number(undefined); // NaN
 console.log(num3);
-
 
 const biggestNum = Number.MAX_VALUE;
 console.log(biggestNum);

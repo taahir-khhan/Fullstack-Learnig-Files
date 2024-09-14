@@ -1,7 +1,6 @@
+// ======== BASICS ========
 
-/*--------------------BASICS-----------------*/
-
-// console.log(Math); 
+// console.log(Math);
 
 // Absolute Value of a Number
 // console.log(Math.abs(-464.544));
@@ -10,7 +9,7 @@
 // console.log(Math.round(4.3));
 // console.log(Math.round(4.7));
 
-// Ceil  Value 
+// Ceil  Value
 // console.log(Math.ceil(4.2));
 // console.log(Math.ceil(4.9));
 
@@ -27,18 +26,13 @@
 // To find square root of a number
 // console.log(Math.sqrt(144));
 
-
-
-
-/*----------ADVANCED-----------*/
+// ======== ADVANCE ========
 
 // Generate value i.e (>= 0) & (< 1)
 console.log(Math.random());
 
-
 // Number between 0 - 10
 console.log(Math.floor(Math.random() * 10));
-
 
 // Getting a random number between two values
 const min = 1;
