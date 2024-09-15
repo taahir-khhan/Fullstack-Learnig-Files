@@ -1,6 +1,4 @@
-
-
-/*       Nullish Coalescing Operator (??)
+/* ========== Nullish Coalescing Operator (??) ==========
 
     - When we fetch data from the database, At that time sometimes it returns values in null or undefind , it further creates problem in our program.
 
@@ -9,33 +7,39 @@
     - The second value is (Preventive value)
 */
 
-// Examples
+// ========== Examples ==========
+
+// Ex-1
 
 function ran() {
-    return undefined;
+  return undefined;
 }
 
 let store = ran();
 
-// if(store ?? 1) {
-//     console.log("Executed", store);
-// }
+if (store ?? 1) {
+  console.log("\nExecuted", store, "\n");
+}
 
+// Ex-2
 
-let val;
-// val = 5 ?? 10;
-// val = null ?? 10;
-// val = undefined ?? 20;
-val = undefined ?? 33 ?? 44 ?? 55;
+let val1 = 5 ?? 10;
+console.log(val1);
 
-// console.log(val);
+let val2 = null ?? 10;
+console.log(val2);
 
+let val3 = undefined ?? 20;
+console.log(val3);
 
+let val4 = undefined ?? null ?? 44;
+console.log(val4, "\n");
 
-
-// Ternary Operator
+// ========== Ternary Operator ==========
 // condition ? true : false;
 
 const balance = 12;
 
-// balance !== 0 ? console.log("I have some money") : console.log("I don't have any money");
+balance !== 0
+  ? console.log("I have some money")
+  : console.log("I don't have any money");

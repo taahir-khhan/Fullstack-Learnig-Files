@@ -1,5 +1,4 @@
-
-/*    +++++ For Each +++++
+/* ========== For Each ==========
       
       - It is an array method which itrate through array elements.
 
@@ -10,59 +9,58 @@
       - It will not return anything, even if we explicitly define it.
 */
 
-
-
 const languages = ["Odia", "Urdu", "Hindi", "English"];
 
+// Ex-1
 
-// languages.forEach( (items) => {
-//       console.log(items);
-// });
-
-
-// function print(items) {
-//       console.log(items);
-// }
-
-// languages.forEach(print)
-
-
-
-
-
-// languages.forEach( (items, idx, arr) => {
-//       console.log(items, idx, arr);
-// } );
-
-
-
-
-
-let lang = languages.forEach( (items) => {
-      return items === "Urdu";
+languages.forEach((items) => {
+  console.log(items);
 });
 
-console.log(lang);
+console.log("\n");
 
+// Ex-2
 
+function print(items) {
+  console.log(items);
+}
 
+languages.forEach(print);
+console.log("\n");
+
+// Ex-3
+
+languages.forEach((items, idx, arr) => {
+  console.log(items, idx, arr);
+});
+
+console.log("\n");
+
+// Ex-4
+
+let lang = languages.forEach((items) => {
+  return items === "Urdu";
+});
+
+console.log(lang, "\n");
+
+// Ex-5
 
 const mobileData = [
-      {
-            name : "Motrola",
-            price: 15000
-      },
-      {
-            name : "Google Pixel",
-            price: 49000
-      },
-      {
-            name : "I-phone",
-            price: 65000
-      },
+  {
+    name: "Motrola",
+    price: 15000,
+  },
+  {
+    name: "Google Pixel",
+    price: 49000,
+  },
+  {
+    name: "I-phone",
+    price: 65000,
+  },
 ];
 
-// mobileData.forEach( (items) => {
-//       console.log(items.name);
-//       console.log(items.price);
-// });
+mobileData.forEach((items) => {
+  console.log(items.name, ":", items.price);
+});

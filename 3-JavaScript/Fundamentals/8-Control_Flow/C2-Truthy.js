@@ -1,5 +1,4 @@
-
-/* ++++++++  Falsy Values  ++++++++
+/* ========== Falsy Values ==========
 
    - false keyword
    -  0
@@ -13,13 +12,11 @@
    * These are all falsy values, others are truthy, That means whenever in conditioal statement, checks the above values, it always evalutes the above values as false.
 */
 
-if(NaN) {
-      // In case of Falsy values this block of codes will never execute.
-      console.log(`Falsy Values`);
+if (NaN) {
+  console.log(`Falsy Values`);
 }
 
-
-/* ++++++++  Truthy Values  ++++++++
+/* ========== Truthy Values ==========
 
    - Not empty string ("0", " ")
    - numbers
@@ -28,16 +25,13 @@ if(NaN) {
    - function (){}
 */
 
-if(87) {
-      console.log("Truthy Values");
+if (87) {
+  console.log("\nTruthy Values \n");
 }
 
-
-
 // Checking Object Emptiness
-
 let obj = {};
 
-if(Object.keys(obj).length === 0) {
-      console.log("Object is empty");
+if (Object.keys(obj).length === 0) {
+  console.log("Object is empty");
 }
