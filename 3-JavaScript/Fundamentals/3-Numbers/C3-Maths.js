@@ -1,42 +1,43 @@
 // ======== BASICS ========
 
-// console.log(Math);
+console.log(Math, "\n");
 
-// Absolute Value of a Number
-// console.log(Math.abs(-464.544));
+console.log("Absolute value: ", Math.abs(-464.544), "\n");
 
-// Round the Number
-// console.log(Math.round(4.3));
-// console.log(Math.round(4.7));
+console.log("Round the value: ");
+console.log(Math.round(4.3));
+console.log(Math.round(4.7), "\n");
 
-// Ceil  Value
-// console.log(Math.ceil(4.2));
-// console.log(Math.ceil(4.9));
+console.log("Ciel value: ");
+console.log(Math.ceil(4.2));
+console.log(Math.ceil(4.9), "\n");
 
-// Floor Value
-// console.log(Math.floor(7.2));
-// console.log(Math.floor(7.9));
+console.log("Floor value: ");
+console.log(Math.floor(7.2));
+console.log(Math.floor(7.9), "\n");
 
-// Min Number
-// console.log(Math.min(4.2, 78, 3, 1));
+console.log("Minimum num: ", Math.min(4.2, 78, 3, 1), "\n");
 
-// Max Number
-// console.log(Math.max(4.2, 78, 3, 1));
+console.log("Maximum num: ", Math.max(4.2, 78, 3, 1), "\n");
 
-// To find square root of a number
-// console.log(Math.sqrt(144));
+console.log("Square root of a num: ", Math.sqrt(144), "\n");
 
 // ======== ADVANCE ========
 
 // Generate value i.e (>= 0) & (< 1)
-console.log(Math.random());
+console.log("Random number: ", Math.random(), "\n");
 
-// Number between 0 - 10
-console.log(Math.floor(Math.random() * 10));
+console.log(
+  "Generate a random number between 0 - 10: ",
+  Math.floor(Math.random() * 10),
+  "\n"
+);
 
-// Getting a random number between two values
+// Generate a random number between two values, 1 for avoiding zero case
 const min = 1;
 const max = 6;
 
-// console.log(Math.floor(Math.random()*(max - min + 1) + min));
-// 1 for avoiding zero case
+console.log(
+  "Generate a random number between 1 - 6: ",
+  Math.floor(Math.random() * (max - min + 1) + min)
+);

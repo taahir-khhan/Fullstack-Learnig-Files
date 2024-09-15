@@ -6,4 +6,4 @@ console.log(score);
 
 // Specifically defining that it's a number, type of this variable is Object
 let balance = new Number(243);
-console.log(balance);
+console.log(balance, typeof balance);

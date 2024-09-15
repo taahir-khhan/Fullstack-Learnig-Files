@@ -19,8 +19,8 @@ let convertedNum = Number(value);
 let value2 = 1234.585675;
 let convertedStr = String(value2);
 
-// console.log(convertedStr);
-// console.log(typeof convertedStr);
+console.log("\n", convertedStr);
+console.log(typeof convertedStr, "\n");
 
 /*
   33      -> "33"
@@ -32,8 +32,8 @@ let convertedStr = String(value2);
 let value3 = 0;
 let convertedBool = Boolean(value3);
 
-// console.log(convertedBool);
-// console.log(typeof convertedBool);
+console.log(convertedBool);
+console.log(typeof convertedBool, "\n");
 
 /* 
   1        -> true
@@ -48,36 +48,37 @@ let convertedBool = Boolean(value3);
 
 let num = 33;
 let num2 = -num;
-// console.log(num2);
+console.log(num2, "\n");
 
 // Concatenate
 let str1 = "Hello";
 let str2 = " World";
-// console.log(str1 + str2 + " I am Here");
+console.log(str1 + str2 + " I am Here \n");
 
 // 2 to the power 4
-// console.log(2**4);
+console.log(2 ** 4, "\n");
 
 // ======= Conversion to string is Very Intresting =======
 
-// console.log(1 + "2");
-// console.log("1" + 2);
+console.log(1 + "2");
+console.log("1" + 2);
 
 // first it will encounter string and convert all of them into string.
-// console.log("1" + 2 + 2);
+console.log("1" + 2 + 2);
 
 // first it will perform arithmetic operation, then convert to string.
-// console.log(1 + 2 + "2");
+console.log(1 + 2 + "2 \n");
 
 // ======= Bad Practices =======
 
-// console.log(+true);            // Not a good practice/conversion, but print 1
-// console.log(+"");             // 0
+// Not a good practice/conversion, but print 1
+console.log(+true);
 
+// 0
+console.log(+"");
+
+// Code readibility is zero.
 let n1, n2, n3, n4;
-n1 = n2 = n3 = n4 = 9; // Very bad practice
-// console.log(n1, n2, n3, n4);    // Code readibility is zero
+n1 = n2 = n3 = n4 = 9;
 
-/*    ======= Implicit Type Coercion =======
-  - It is the autmatic conversion of value from one data-type to another
-*/
+console.log(n1, n2, n3, n4);

@@ -2,9 +2,9 @@
 "use strict";
 
 // we are using nodejs, not browser, this is a browser function
-// alert( 3 + 3)
+// alert(3 + 3);
 
-// Code readability should be high, and this is not a good practice
+// We can write code like this, But code readability should be high, and this is not a good practice.
 // console.log(3
 //     +
 //      3)
@@ -14,14 +14,14 @@
 let userName = "hitesh";
 let age = 18;
 let state;
-// console.log(userName, age, state);
+console.log("\n", userName, age, state, "\n");
 
 // ======== Re-initializing to different type is possible ========
 
 let x = 12;
 x = "hello";
 x = true;
-// console.log(x);
+console.log(x, "\n");
 
 /*   ======== DataTypes ========
 
@@ -43,7 +43,7 @@ x = true;
 
 let myName = "Tahir";
 let myFatherName = "Seim";
-// console.log(myName, myFatherName);
+console.log(myName, myFatherName, "\n");
 
 /* 2) Numbers 
 
@@ -56,7 +56,7 @@ let myFatherName = "Seim";
 
 const compId = 645737;
 const accBalance = 12.34244;
-// console.log(compId, accBalance);
+console.log(compId, accBalance, "\n");
 
 /* 3) BigInt 
 
@@ -69,7 +69,7 @@ const accBalance = 12.34244;
 let bigNum = 898478742987472897489488n;
 let bigBigNum = BigInt(8978947298748978);
 let hugeString = BigInt("7845637676537676565");
-// console.log(bigNum, bigBigNum, hugeString);
+console.log(bigNum, bigBigNum, hugeString, "\n");
 
 /* 4) Boolean 
 
@@ -80,7 +80,7 @@ let hugeString = BigInt("7845637676537676565");
 
 let isShopOpen = true;
 let areYouMarried = false;
-// console.log(isShopOpen, areYouMarried);
+console.log(isShopOpen, areYouMarried, "\n");
 
 /* 5) Undefind
 
@@ -90,8 +90,8 @@ let areYouMarried = false;
 */
 
 let myAge;
-// console.log(myAge);
-// console.log(typeof myAge);
+console.log(myAge);
+console.log(typeof myAge, "\n");
 
 /* 6) null 
 
@@ -101,8 +101,8 @@ let myAge;
 */
 
 let isEmpty = null;
-// console.log(isEmpty);
-// console.log(typeof isEmpty);
+console.log(isEmpty);
+console.log(typeof isEmpty, "\n");
 
 /* 7) Symbol 
 
@@ -116,8 +116,8 @@ let isEmpty = null;
 const symbol1 = Symbol("trk");
 const symbol2 = Symbol("trk");
 
-// console.log(symbol1, symbol2);
-// console.log(symbol1 === symbol2);
+console.log(symbol1, symbol2);
+console.log(symbol1 === symbol2, "\n");
 
 /*   ======== B)Non-Primitive ========
 
@@ -135,10 +135,10 @@ var myObj = {
   age: 22,
   isWorking: true,
   greet: function () {
-    console.log("Hello Namastey Asalamualeikum");
+    console.log("Hello Namastey Asalamualeikum \n");
   },
   nums: [1, 2, 3],
 };
 
-console.log(myObj.nums[2]);
-// myObj.greet()
+console.log(myObj.nums[2], "\n");
+myObj.greet();

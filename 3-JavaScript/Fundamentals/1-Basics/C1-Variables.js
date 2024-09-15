@@ -1,4 +1,4 @@
-/*     ======== Variables ========
+/* ======== Variables ========
 
    - In javascript var, let & const are three ways to declare variables.
 
