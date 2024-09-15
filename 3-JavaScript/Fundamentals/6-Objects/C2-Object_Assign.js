@@ -1,4 +1,4 @@
-// ========== Assigning two objects into another ==========
+// ========== Assigning two objects into one ==========
 
 const user1 = {
   name: "Ali",
@@ -11,7 +11,7 @@ const user2 = {
 };
 
 const combine = { user1, user2 };
-// console.log(combine);
+console.log("\n", combine, "\n");
 
 // ========== To Assign The Value of Two Object as property ==========
 
@@ -20,10 +20,10 @@ const obj2 = { isHuman: true, age: 2000, name: "Biili" };
 
 const obj3 = Object.assign(obj1, obj2);
 
-// console.log(obj3);
-// console.log(obj1); // Only Obj1 is also modified
-// console.log(obj2);
-// console.log(obj1 === obj3);
+console.log(obj3);
+console.log(obj1); // Only Obj1 is also modified
+console.log(obj2);
+console.log(obj1 === obj3, "\n");
 
 // ========== To avoid the Above Case, always use empty obj first, while assigning the value ==========
 
@@ -32,16 +32,15 @@ const obj5 = { 3: "Shoyeb", 4: 24 };
 
 const obj6 = Object.assign({}, obj4, obj5);
 
-// console.log(obj6);
-// console.log(obj4); // Modification in any original object doesn't occur
-// console.log(obj5);
-// console.log(obj4 === obj6);
+console.log(obj6);
+console.log(obj4); // Modification in any original object doesn't occur
+console.log(obj5);
+console.log(obj4 === obj6, "\n");
 
 // ========== Best way to do is use Spread Operator ==========
 
 const obj7 = { ...obj1, ...obj2 };
-
-// console.log(obj7);
+console.log(obj7, "\n");
 
 // ========== Database Returns The Data In This Format ==========
 
@@ -60,7 +59,7 @@ const instaUser = [
   },
 ];
 
-// console.log(instaUser[2].email);
+console.log(instaUser[2].email, "\n");
 
 // ========== Some Object Methods ==========
 
@@ -74,7 +73,7 @@ const user3 = {
   },
 };
 
-// console.log(user3.hasOwnProperty("insObj"));
-// console.log(Object.keys(user3));
-// console.log(Object.values(user3));
-// console.log(Object.entries(user3));
+console.log(user3.hasOwnProperty("insObj"));
+console.log(Object.keys(user3));
+console.log(Object.values(user3));
+console.log(Object.entries(user3));

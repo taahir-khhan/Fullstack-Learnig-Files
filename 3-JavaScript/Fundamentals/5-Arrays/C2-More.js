@@ -1,50 +1,57 @@
-// 1) Checking the given argument is array or not
-// console.log(Array.isArray([23]))
+// ========== Checking the given argument is array or not ==========
 
-// 2) Making an Array using Variables
+console.log("\n isArray: ", Array.isArray([23]), "\n");
+
+// ========== Making an Array using Variables ==========
 
 let score1 = 100;
 let score2 = 200;
 let score3 = 300;
-// console.log(Array.of(score1, score2, score3));
+console.log(
+  "Making Array using variables: ",
+  Array.of(score1, score2, score3),
+  "\n"
+);
 
-// 3) Push Operation
+// ========== Push Operation ==========
 
 const indian_heros = ["Hatim Tai", "ShaktiMaan", "Ra-one", "Son-Pari"];
 const indian_villains = ["Kilbis", "G-one"];
 
-// indian_heros.push(indian_villains);   // Make Nested Array
-// console.log(indian_heros);
-// console.log(indian_heros[4][0]);     // Accessing Nested array Elements
+indian_heros.push(indian_villains); // Make Nested Array
 
-// ========== CONCAT ==========
+console.log("Push Operation: ", indian_heros, "\n");
 
-/*
+/* ========== CONCAT ==========
+
      - Combines two or more arrays values into one. This method returns a new array without modifying any existing arrays.
 
-     - We can Concat More than one array
+     - We can Concat More than one array.
 */
 
-const allInOne = indian_heros.concat(indian_villains, [1, 2, 3, 4]);
+const oils = ["Sunflower", "Ruchi", "Fortune"];
+const price = [120, 90, 110];
 
-// console.log(allInOne);
-// console.log(indian_heros);
+const mergedArrOne = oils.concat(price, ["A1", "A2", "A3"]);
 
-// ========== SPREAD OPERATOR ==========
+console.log("Concated Array: ");
+console.log(mergedArrOne, "\n");
 
-/* 
+/* ========== SPREAD OPERATOR ========== 
+
       - Spread the elements of the both array. This is the best way to merge to array value into one.
 */
+const vegies = ["Alu", "Piaj", "Began", "Dhaniya"];
+const nonVeg = ["Beef", "Chicken", "Fish"];
 
-const newArr2 = [...indian_heros, ...indian_villains];
+const mergedArray = [...vegies, ...nonVeg];
 
-// console.log(newArr2);
+console.log("Spread Operator: ");
+console.log(mergedArray, "\n");
 
-// ========== FLAT ==========
+/* ========== FLAT ==========
+      - Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.    
 
-/*
-      - Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.
-      
       - We can specify it's depth, but infinity automatically flat all depth array.
 */
 
@@ -61,5 +68,6 @@ const netsed_array = [
   [1, 5],
 ];
 
+console.log("Flat Array: ");
 console.log(netsed_array.flat(2)); // (depth)
 console.log(netsed_array.flat(Infinity));

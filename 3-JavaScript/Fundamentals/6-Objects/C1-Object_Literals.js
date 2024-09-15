@@ -9,39 +9,38 @@ const user = {
   age: 22,
   isLearning: true,
   greeting: function () {
-    console.log("Hello");
+    console.log("Hello World");
   },
 };
 
 console.log(user);
-console.log(user[mySym]); // Accessing Symbol Value
+console.log(user[mySym], "\n"); // Accessing Symbol Value
 
 // ========== Accessing Object Properties ==========
 
 console.log(user.name);
-console.log(user["name"]);
+console.log(user["name"], "\n");
 
 // console.log(user.full name); // this is not possible
 console.log(user["full name"]); // only way of accessing
-console.log(user.age);
+console.log(user.age, "\n");
 
 // ========== Modifying Object Properties ==========
 
 user.age = 27;
 user["age"] = 33;
-console.log(user); // In both way possible
+console.log(user, "\n"); // In both way possible
 
 // Freeze Object - Now we can't modify the Object by any way like properties, values, keys etc.
-
 Object.freeze(user);
 
 user.age = 44;
-console.log(user);
+console.log(user, "\n");
 
 // ========== Object Method Call ==========
 
 user.greeting();
-user.greeting; // Reference of the greeting function
+console.log(user.greeting, "\n"); // Reference of the greeting function
 
 // ========== Nested Object ==========
 
@@ -71,4 +70,4 @@ const user5 = {
 };
 
 console.log(person.address.street);
-console.log(user5.nested["minor val"]);
+console.log(user5.nested["minor val"], "\n");

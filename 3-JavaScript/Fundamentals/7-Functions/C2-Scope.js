@@ -1,83 +1,62 @@
+/* =========== Scope ===========
 
-
-/*   +++++ Scope +++++
-
-      - Certain Region Of Program & How it behaves in different variable declaration
+    - Certain Region Of Program & How it behaves in different variable declaration.
 */
 
-
-let a = 100
-var b = 111
+let a = 100;
+var b = 111;
 
 {
-      let a = 200
-      var b = 222
+  let a = 200;
+  var b = 222;
 
-      // console.log("Inner a: ", a);
-      // console.log("Inner b: ", b);
+  console.log("Inner a: ", a);
+  console.log("Inner b: ", b, "\n");
 }
 
-// console.log("Outerr a: ", a);
-// console.log("Outerr b: ", b);
+console.log("Outerr a: ", a);
+console.log("Outerr b: ", b, "\n");
 
-
-
-
-
-// +++++++++ Accessible Or Not +++++++++
-
+// =========== Accessible Or Not ===========
 
 function One() {
+  let username = "Tahir";
 
-      let username = "Tahir"
+  function Two() {
+    let channel = "Chai Aur Code";
+    // Here username is accessible, due to closure property of javascript
+    console.log(`${username} learning from ${channel}`, "\n");
+  }
 
-      function Two() {   
+  // We can't access inner function variable outside the function.
+  // console.log(channel);
 
-            let channel = "Chai Aur Code"
+  Two();
+}
 
-            // Here username is accessible, due to closure property of javascript
-            console.log(`${username} leraning from ${channel}`);
-      }
-
-      // We can't access inner function variable outside the function, Bacha baap ko data mang sakta hai magar baap bache se nahin mang sakta.
-
-      // console.log(channel);
-      Two();
-} 
-
-// One();
-
-
-
+One();
 
 // Similar with block scope
 
-if(true) {
+if (true) {
+  const name = "Chada";
 
-      const name = "Chada"
+  if (true) {
+    const fathername = "Tahir";
+    console.log("Mere Bete ka naam: ", name, "\n");
+  }
 
-      if(true) {
-            const fathername = "Tahir"
-            // console.log("Mere Bete ka naam: ", name);
-      }
-
-      // console.log("Baap ka Naam bhul gaya bete: ", fathername);
+  // We can't access block scoped variable outside it's scope.
+  // console.log("Baap ka Naam bhul gaya bete: ", fathername);
 }
 
+// ========= Function Expression =========
 
+// We can't call the function expression, before declaration.
+// addTwo(7);
 
-
-
-/* +++++ Function Expression +++++
-
-      - We can't call the function expression, before declaration.
-*/
-
-
-// addTwo(7)   
-
-var addTwo = function(num) {
-      return num + 2;
-}
+var addTwo = function (num) {
+  return num + 2;
+};
 
 console.log(addTwo(25));
