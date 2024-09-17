@@ -1,8 +1,10 @@
 /* =========== this keyword ===========
 
-   - store's the context of current object.
-   - In global space points to the global object i.e window.  
-   - Inside an object, store the reference of current object. 
+  - store's the context of current object.
+
+  - In global space points to the global object i.e window.
+  
+  - Inside an object, store the reference of current object. 
 */
 
 const user = {
@@ -35,9 +37,9 @@ abc();
 
 /* =========== Arrow Functions ===========
 
-   - An arrow function expression is a compact alternative to a traditional function expression, with some semantic differences.
+  - An arrow function expression is a compact alternative to a traditional function expression, with some semantic differences.
 
-   - Declaration can be assigned to a variable , passed as an argument, called in IFFE etc.
+  - Declaration can be assigned to a variable , passed as an argument, called in IFFE etc.
 */
 
 const print = () => {

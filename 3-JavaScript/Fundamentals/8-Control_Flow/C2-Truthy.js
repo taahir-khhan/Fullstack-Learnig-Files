@@ -1,15 +1,15 @@
 /* ========== Falsy Values ==========
 
-   - false keyword
-   -  0
-   - (-0)
-   - 0n
-   - null
-   - undefind 
-   - NaN
-   - empty string ("")
+  - false keyword
+  -  0
+  - (-0)
+  - 0n
+  - null
+  - undefind 
+  - NaN
+  - empty string ("")
 
-   * These are all falsy values, others are truthy, That means whenever in conditioal statement, checks the above values, it always evalutes the above values as false.
+  * These are all falsy values, others are truthy, That means whenever in conditioal statement, checks the above values, it always evalutes the above values as false.
 */
 
 if (NaN) {
@@ -18,11 +18,11 @@ if (NaN) {
 
 /* ========== Truthy Values ==========
 
-   - Not empty string ("0", " ")
-   - numbers
-   - []
-   - {}
-   - function (){}
+  - Not empty string ("0", " ")
+  - numbers
+  - []
+  - {}
+  - function (){}
 */
 
 if (87) {

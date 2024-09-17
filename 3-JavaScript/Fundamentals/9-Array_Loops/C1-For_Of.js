@@ -8,7 +8,7 @@ for (const num of myArray) {
 
 /* ========== Maps ==========
 
-    - In javascript it contains value in (key, pair) format & only contains unique values based on unique keys
+  - In javascript it contains value in (key, pair) format & only contains unique values based on unique keys
 */
 
 const map = new Map();

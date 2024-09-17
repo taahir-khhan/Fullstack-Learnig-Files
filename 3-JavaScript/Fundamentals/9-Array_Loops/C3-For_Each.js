@@ -1,12 +1,12 @@
 /* ========== For Each ==========
-      
-      - It is an array method which itrate through array elements.
+  
+  - It is an array method which itrate through array elements.
 
-      - All the looping function takes argument a callback function
+  - All the looping function takes argument a callback function
 
-      - The CB have the access of array ele, idx and the whole array
+  - The CB have the access of array ele, idx and the whole array
 
-      - It will not return anything, even if we explicitly define it.
+  - It will not return anything, even if we explicitly define it.
 */
 
 const languages = ["Odia", "Urdu", "Hindi", "English"];
@@ -21,11 +21,11 @@ console.log("\n");
 
 // Ex-2
 
-function print(items) {
+function printMe(items) {
   console.log(items);
 }
 
-languages.forEach(print);
+languages.forEach(printMe);
 console.log("\n");
 
 // Ex-3

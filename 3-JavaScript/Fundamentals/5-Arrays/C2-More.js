@@ -24,9 +24,9 @@ console.log("Push Operation: ", indian_heros, "\n");
 
 /* ========== CONCAT ==========
 
-     - Combines two or more arrays values into one. This method returns a new array without modifying any existing arrays.
+  - Combines two or more arrays values into one. This method returns a new array without modifying any existing arrays.
 
-     - We can Concat More than one array.
+  - We can Concat More than one array.
 */
 
 const oils = ["Sunflower", "Ruchi", "Fortune"];
@@ -39,7 +39,7 @@ console.log(mergedArrOne, "\n");
 
 /* ========== SPREAD OPERATOR ========== 
 
-      - Spread the elements of the both array. This is the best way to merge to array value into one.
+  - Spread the elements of the both array. This is the best way to merge to array value into one.
 */
 const vegies = ["Alu", "Piaj", "Began", "Dhaniya"];
 const nonVeg = ["Beef", "Chicken", "Fish"];
@@ -50,9 +50,10 @@ console.log("Spread Operator: ");
 console.log(mergedArray, "\n");
 
 /* ========== FLAT ==========
-      - Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.    
 
-      - We can specify it's depth, but infinity automatically flat all depth array.
+  - Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.    
+
+  - We can specify it's depth, but infinity automatically flat all depth array.
 */
 
 const netsed_array = [

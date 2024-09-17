@@ -1,6 +1,6 @@
 /* =========== Scope ===========
 
-    - Certain Region Of Program & How it behaves in different variable declaration.
+  - Certain Region Of Program & How it behaves in different variable declaration.
 */
 
 let a = 100;
