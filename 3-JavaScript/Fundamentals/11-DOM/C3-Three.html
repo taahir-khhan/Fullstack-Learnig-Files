@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>DOM 3</title>
-</head>
-<body style="background-color: #212121; color: #fff;">
-      
-</body>
-<script>
-      
-      // 1) Creating element using DOM
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 3</title>
+  </head>
+  <body style="background-color: #212121; color: #fff"></body>
+  <script>
+    // ========= Creating element using DOM =========
 
-      const newEle = document.createElement('h1');
-      console.log(newEle);
+    const newEle = document.createElement("h1");
+    console.log(newEle);
 
+    // ========= Assigning Attribues, Styles & Content =========
 
-      // 2) Assigning Attribues, Styles & Content
+    newEle.className = "main";
+    newEle.id = "parent-main";
+    newEle.title = "I am a titile";
+    newEle.style.backgroundColor = "white";
+    newEle.style.color = "Black";
+    newEle.style.padding = "5px";
+    newEle.innerText = "Main Heading";
 
-      newEle.className = 'main'
-      newEle.id = 'parent-main'
-      newEle.title = 'I am a titile'
-      newEle.style.backgroundColor = 'white'
-      newEle.style.color = "Black"
-      newEle.style.padding = "5px"
-      newEle.innerText = "Main Heading"
+    // ========= Add the above Element to HTML Document. (Kyunki Element abhi hawa mein hai) =========
 
+    document.body.appendChild(newEle);
 
-      // 3) Add the above Element to HTML Document. (Kyunki Element abhi hawa mein hai)
+    // ========= Add another text Node to Element in the below format, it will insert the text. =========
 
-      document.body.appendChild(newEle);
+    const addText = document.createTextNode(" Branch");
+    newEle.appendChild(addText);
 
-
-      // 4) Add another text Node to Element in the below format, it will insert the text.
-
-      const addText = document.createTextNode(" Branch")
-      newEle.appendChild(addText);
-
-
-      // 5) This format will replace the text
-
-      // newEle.innerText = "Replaced heading"
-
-</script>
+    // ========= This format will replace the text =========
+    // newEle.innerText = "Replaced heading";
+  </script>
 </html>

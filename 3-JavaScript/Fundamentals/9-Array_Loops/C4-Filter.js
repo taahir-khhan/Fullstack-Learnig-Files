@@ -1,32 +1,28 @@
-/*  ++++++ Filter ++++++
+/*  ========= Filter =========
 
-      - It is also an array method, which itarte over an array and Filter the array based on the condition defined.
+  - It is also an array method, which itarte over an array and Filter the array based on the condition defined.
 
-      - It will return a new array and doesn't have any effect in original array.
+  - It will return a new array and doesn't have any effect in original array.
 
-      - It also have the access to ele, idx and array.
+  - It also have the access to ele, idx and array.
 */
 
-const numsArr = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
+// Ex-1
 
+const numsArr = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
 const values = numsArr.filter((num) => num > 10);
-// console.log(values);
+console.log(values, "\n");
 
 // Other ways of doing the above task
-
 const newArr = [];
-
 numsArr.filter((num) => {
   if (num < 10) {
     newArr.push(num);
   }
 });
+console.log(newArr, "\n");
 
-// console.log(newArr);
-
-// numsArr.filter( (item, idx, arr) => {
-//       console.log(item, idx, arr);
-// });
+// Ex-2
 
 const book = [
   { title: "book One", genre: "Fiction", publish: 1981, edition: 2004 },
@@ -42,13 +38,13 @@ const book = [
 
 // Give me only fiction book
 let ans1 = book.filter((item) => item.genre === "Fiction");
-// console.log(ans1);
+console.log(ans1, "\n");
 
 // fiction book edition 2010
 let ans2 = book.filter(
   (item) => item.genre === "Fiction" && item.edition === 2010
 );
-// console.log(ans2);
+console.log(ans2, "\n");
 
 const myArr2 = [1, 2, 4, 6, 7];
 let ans3 = myArr2.filter((num) => {

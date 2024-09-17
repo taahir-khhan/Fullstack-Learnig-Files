@@ -1,4 +1,4 @@
-/*  ++++++ Map ++++++
+/*  ========= Map =========
 
       - It will also return a new array and doesn't modify the original array.
 
@@ -9,15 +9,13 @@
 
 const numsArr = [10, 20, 30, 40, 50];
 
-const newNums = numsArr.map( (num) => (num + 1));
-// console.log(newNums);
-
+const newNums = numsArr.map((num) => num + 1);
+console.log(newNums, "\n");
 
 // Chaining
-
 const newNums2 = numsArr
-                  .map( (num) => (num * 10))
-                  .map( (num) => (num / 2))
-                  .filter((num) => (num > 100));
+  .map((num) => num * 10)
+  .map((num) => num / 2)
+  .filter((num) => num > 100);
 
 console.log(newNums2);
