@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-</head>
-<body style="background-color: #212121; color: #fff;">
-      <h1>Learning Javascript</h1>
-      <button id="stop">Stop Change</button>
-      <p>Click the above button if you don't want to change the heading, before it will change in 3sec.</p>
-</body>
-<script>
-      
-      /* 1) setTimeout()
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Learning Javascript</h1>
+    <button id="stop">Stop Change</button>
+    <p>
+      Click the above button if you don't want to change the heading, before it
+      will change in 3sec.
+    </p>
+  </body>
+  <script>
+    /* 1) setTimeout()
 
             - This method sets a timer which executes a function or specified piece of code, once the timer expires.
       */
 
-      const changeMe = setTimeout(function(){
-            document.querySelector('h1').innerHTML = "setTimeout changed the Heading";
-            console.log("Change Done");
-      }, 3000);
+    const changeMe = setTimeout(function () {
+      document.querySelector("h1").innerHTML = "setTimeout changed the Heading";
+      console.log("Change Done");
+    }, 3000);
 
-
-      /* 2) clearTimeout()
+    /* 2) clearTimeout()
 
             - To stop executing the setTimeout, we use this method
 
             - We just have to pass the reference of setTimeout into clearTimeout.
       */
 
-      document.querySelector('#stop').addEventListener('click', function(){
-            // This event will stop the above setTime out execution
-            clearTimeout(changeMe);
-            document.querySelector('p').innerText = "Change stopped"
-      });
-
-</script>
+    document.querySelector("#stop").addEventListener("click", function () {
+      // This event will stop the above setTime out execution
+      clearTimeout(changeMe);
+      document.querySelector("p").innerText = "Change stopped";
+    });
+  </script>
 </html>

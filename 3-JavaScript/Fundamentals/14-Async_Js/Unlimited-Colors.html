@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>unlimited Colors</title>
-</head>
-<body style="background-color: #212121; color: #fff;">
-      <h1>Unlimited Colors</h1>
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
-</body>
-<script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unlimited Colors</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Unlimited Colors</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    function randomColorGenerator() {
+      const hexVal = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += hexVal[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
-      function randomColorGenerator() {
-            const hexVal = '0123456789ABCDEF'
-            let color = '#'
-            for(let i = 0; i < 6; i++) {
-                  color += hexVal[Math.floor(Math.random() * 16)]
-            }
-            return color;
+    let intervalId;
+    const startChangingColor = function () {
+      function changeBgColor() {
+        document.body.style.backgroundColor = `${randomColorGenerator()}`;
       }
 
-      let intervalId;
-      const startChangingColor = function () {
-
-            function changeBgColor () {
-                  document.body.style.backgroundColor = `${randomColorGenerator()}`
-            }
-
-            // Best Practices
-            if(!intervalId) {
-                  intervalId = setInterval(changeBgColor, 1500)
-            }
+      // Best Practices
+      if (!intervalId) {
+        intervalId = setInterval(changeBgColor, 1500);
       }
+    };
 
-      const stopChangingColor = function () {
-            clearInterval(intervalId);
-            // Best Practices
-            intervalId = null
-      }
+    const stopChangingColor = function () {
+      clearInterval(intervalId);
+      // Best Practices
+      intervalId = null;
+    };
 
+    const startBtn = document.getElementById("start");
+    const stopBtn = document.getElementById("stop");
 
-      const startBtn = document.getElementById('start')
-      const stopBtn = document.getElementById('stop')
-
-      startBtn.addEventListener('click', startChangingColor);
-      stopBtn.addEventListener('click', stopChangingColor);
-
-</script>
+    startBtn.addEventListener("click", startChangingColor);
+    stopBtn.addEventListener("click", stopChangingColor);
+  </script>
 </html>

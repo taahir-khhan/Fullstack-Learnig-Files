@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-</head>
-<body style="background-color: #212121; color: #fff;">
-      <h1>Chai Aur Javascript</h1>
-      <button id="start">Start</button>
-      <button id="stop">Stop</button>
-      <p class="note">* Open Console to see effect of start & stop button</p>
-</body>
-<script>
-
-      /*  1) setInterval
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Chai Aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <p class="note">* Open Console to see effect of start & stop button</p>
+  </body>
+  <script>
+    /*  1) setInterval
 
             - This method will run continiously without stopping (Unlimited times).
             
             - In the below code we just stored the reference of setInterval inside a variable.
-      */ 
+      */
 
+    let interval = setInterval(function () {
+      console.log("Tahir", Math.floor(Math.random() * 10) + 1);
+    }, 1000);
 
-      let interval = setInterval(function(){
-            console.log("Tahir", Math.floor(Math.random() * 10) + 1);
-      }, 1000);
-
-
-      /* 2) clearInterval
+    /* 2) clearInterval
 
             - To stop the setInterval, we use the clearInterval method.
 
             - The use cases of this two method wrapped inside some functionality.
       */
 
-      clearInterval(interval);
+    clearInterval(interval);
 
+    // ========== Use-case Example ==========
 
+    function printNonstop(str) {
+      console.log(`${str} Tahir`, Math.floor(Math.random() * 10) + 1);
+    }
 
-      // ========== Use-case Example ========== 
-      
+    let intervalStart;
 
-      function printNonstop(str) {
-            console.log(`${str} Tahir`, Math.floor(Math.random() * 10) + 1);
+    document.querySelector("#start").addEventListener("click", function () {
+      if (!intervalStart) {
+        intervalStart = setInterval(printNonstop, 1000, "Hello");
       }
+    });
 
-      let intervalStart;
-
-      document.querySelector('#start').addEventListener('click', function() {
-            if(!intervalStart) {
-                  intervalStart = setInterval(printNonstop, 1000, "Hello");
-            }
-      });
-
-      document.querySelector('#stop').addEventListener('click', function() {
-            clearInterval(intervalStart);
-            intervalStart = null
-      });
-
-</script>
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(intervalStart);
+      intervalStart = null;
+    });
+  </script>
 </html>
