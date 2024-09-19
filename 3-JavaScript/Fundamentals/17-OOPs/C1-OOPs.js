@@ -1,7 +1,8 @@
-/*  new 
-      - When a function is called with the 'new' keyword,Now the function will be used as a constructor.
+/*  ========== new ==========
+ 
+  - When a function is called with the 'new' keyword,Now the function will be used as a constructor.
 
-      - It creates a blank, plain JavaScript object. For convenience, let's call it newInstance.
+  - It creates a blank, plain JavaScript object. For convenience, let's call it newInstance.
 */
 
 function user(name, age, isLoggedIn) {

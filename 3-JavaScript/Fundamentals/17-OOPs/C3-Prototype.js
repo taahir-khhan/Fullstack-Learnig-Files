@@ -1,41 +1,34 @@
 let value = "SayMyname";
-
 let names = ["Tahir", "Badal", "Chan"];
-
 let power = {
   Tahir: "Responsible",
   Badal: "Physically Strong",
   Chan: "Intelligent",
-
   getBadal: function () {
-    console.log(`Badal speciality ${this.Badal}`);
+    console.log(`Badal speciality ${this.Badal} \n`);
   },
 };
 
-// power.getBadal();
+power.getBadal();
 
-// 1) Create a functionality which will be availabe to all objects of JS
-
+// ========== New functionality for all JS Objects ==========
 Object.prototype.tahir = function () {
   console.log(`Tahir is present in all objects`);
 };
 
-// names.tahir();
-// power.tahir();
-// value.tahir();
+// Checking different object have access to tahir() or not
+names.tahir();
+power.tahir();
+value.tahir();
 
-// 2) Create a functionality only for arrays
-
+// ========== Create a functionality only for arrays, which is availabe to only array objects ==========
 Array.prototype.Badal = function () {
-  console.log(`Hey Badal is here`);
+  console.log(`\n Hey Badal is here \n`);
 };
 
-// names.Badal();
-// It is not accessible another objects.
-// power.Badal();
+names.Badal();
 
-// 3) Inheritance
-
+// ========== Inheritance ==========
 const user = {
   UserName: "Learning",
   UserEmail: "learning@google.com",
@@ -53,36 +46,23 @@ const TeachingSupport = {
 const TASupport = {
   makeAssignment: "Learning assignment",
   fullTime: true,
-  // A) Inherit all the properties of Teacher
+  //Inherit all the properties of Teacher
   __proto__: Teacher,
 };
 
-// console.log(TASupport.makeVideo);
-// console.log(TASupport.TName);
+console.log(TASupport.makeVideo);
+console.log(TASupport.TName, "\n");
 
-// B) Another Way -> Now Teacher will inherit all the properties of user
+// ========== Another format (Now Teacher will inherit all the properties of user) ==========
 Teacher.__proto__ = user;
 
-// console.log(Teacher.UserName);
-// console.log(Teacher.UserEmail);
+console.log(Teacher.UserName);
+console.log(Teacher.UserEmail, "\n");
 
-// C) Modern Syntax of inheritance -> TeachingSupport will inherit all properties of user.
+// ========== Modern Syntax of inheritance (TeachingSupport will inherit all properties of user. ==========
 Object.setPrototypeOf(TeachingSupport, user);
 
-// console.log(TeachingSupport.UserName);
-// console.log(TeachingSupport.UserEmail);
-// console.log(user.isAvailable);
-
-let normalUser = "Rama   ";
-let normalUser2 = "Shayama  ";
-
-// Create Object functionality for string which gives actual length of the string
-
-String.prototype.actualLen = function () {
-  console.log(`${this}`);
-  console.log(`Actual string length is ${this.trim().length}`);
-};
-
-// normalUser.actualLen();
-// normalUser2.actualLen();
-// "Mera Naam  ".actualLen();
+console.log(TeachingSupport.UserName);
+console.log(TeachingSupport.UserEmail);
+// user does not have the access to TeachingSupport object
+console.log(user.isAvailable, "\n");
