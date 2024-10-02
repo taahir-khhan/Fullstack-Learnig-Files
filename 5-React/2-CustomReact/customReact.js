@@ -21,8 +21,8 @@ function elementRender(ele, container) {
 }
 
 /*
-   - Behind the scene of react all the all the element is parsed into an object,
-   then rendered into main Html page.
+  - Behind the scene of react all the element is parsed into an object,
+  then rendered into main Html page.
 */
 const element = {
   type: "a",

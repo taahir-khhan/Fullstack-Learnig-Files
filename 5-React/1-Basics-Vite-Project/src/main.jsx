@@ -2,6 +2,8 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 
+// Different Approach to render the components in react
+
 function MyApp() {
   return (
     <h3>Learning react on Day-2</h3>
