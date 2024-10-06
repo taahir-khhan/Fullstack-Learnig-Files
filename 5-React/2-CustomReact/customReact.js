@@ -1,16 +1,13 @@
-// Function to render the element into main page
-
+/*  ===== Function to render the element into main page ===== */
 function elementRender(ele, container) {
-  //   First Approach
-
+  //   ==== First Approach ===
   //   const newEle = document.createElement(ele.type);
   //   newEle.innerHTML = ele.children;
   //   newEle.setAttribute("href", ele.props.href);
   //   newEle.setAttribute("target", ele.props.target);
   //   container.appendChild(newEle);
 
-  // Optimized Approach
-
+  // === Optimized Approach ===
   const newEle = document.createElement(ele.type);
   newEle.innerText = ele.children;
 
@@ -21,8 +18,8 @@ function elementRender(ele, container) {
 }
 
 /*
-  - Behind the scene of react all the element is parsed into an object,
-  then rendered into main Html page.
+  - Behind the scene of React, all the element is parsed into an object,
+  then rendered into main HTML page.
 */
 const element = {
   type: "a",

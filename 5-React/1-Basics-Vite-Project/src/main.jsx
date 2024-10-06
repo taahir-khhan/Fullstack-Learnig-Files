@@ -2,8 +2,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 
-// Different Approach to render the components in react
+/* ======= Different Approach to render the components in react ======= */
 
+// The component naming convention always starts with Capital letter in Vite Bundeler.
 function MyApp() {
   return (
     <h3>Learning react on Day-2</h3>
@@ -27,6 +28,7 @@ const anotherEle = (
 
 const name = "Tahir Khan"
 
+// This is actually, how the element is converted into an Object, Then it render into the main HTML Page of this project.
 const reactEle = React.createElement(
   'h1',
   {title: "I am heading"},
