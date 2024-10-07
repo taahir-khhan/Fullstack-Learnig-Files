@@ -71,6 +71,28 @@ input[type="range"] {
   background-color: #3232ff;
 }
 
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.generate {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  margin: 10px 0;
+  background-color: rgb(208, 44, 44);
+  color: #fff;
+  border-radius: 10px;
+  transition: background-color 0.4s, cursor 0.4s;
+}
+
+.generate:hover {
+  background-color: rgb(255, 51, 51);
+  cursor: pointer;
+}
+
 .input_box-2 {
   display: flex;
   align-items: center;

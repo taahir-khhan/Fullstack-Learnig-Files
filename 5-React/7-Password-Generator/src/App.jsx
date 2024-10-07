@@ -6,6 +6,7 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
+  const [isCopied, setIsCopied] = useState(false); // State for copy feedback
 
   // useRef Hook
   const passwordRef = useRef(null);
@@ -27,13 +28,23 @@ function App() {
 
   useEffect(() => {
     passwordGenerator();
-  }, [length, numberAllowed, charAllowed, passwordGenerator]);
+  }, [passwordGenerator]);
 
-  const copyPasswordToCilpboard = useCallback(() => {
-    passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 10);
-    window.navigator.clipboard.writeText(password);
-  });
+  const copyPasswordToClipboard = useCallback(() => {
+    if (passwordRef.current) {
+      passwordRef.current.select();
+      passwordRef.current.setSelectionRange(0, password.length);
+      navigator.clipboard
+        .writeText(password)
+        .then(() => {
+          setIsCopied(true);
+          setTimeout(() => setIsCopied(false), 1500); // Reset after 1.5 seconds
+        })
+        .catch((err) => {
+          console.error("Failed to copy: ", err);
+        });
+    }
+  }, [password]);
 
   return (
     <div className="container">
@@ -47,8 +58,11 @@ function App() {
             readOnly
             ref={passwordRef}
           />
-          <button className="copy" onClick={copyPasswordToCilpboard}>
-            Copy
+          <button
+            className={`copy ${isCopied ? "copied" : ""}`}
+            onClick={copyPasswordToClipboard}
+          >
+            {isCopied ? "Copied!" : "Copy"}
           </button>
         </div>
 
@@ -61,10 +75,10 @@ function App() {
               id="rangeInput"
               value={length}
               onChange={(e) => {
-                setLength(parseInt(e.target.value));
+                setLength(parseInt(e.target.value, 10));
               }}
             />
-            <label htmlFor="rangeInput">Length {length}</label>
+            <label htmlFor="rangeInput">Length: {length}</label>
           </div>
 
           <div>
@@ -76,7 +90,7 @@ function App() {
                 setNumberAllowed((prev) => !prev);
               }}
             />
-            <label htmlFor="numberInput">Numbers</label>
+            <label htmlFor="numberInput">Include Numbers</label>
           </div>
 
           <div>
@@ -88,8 +102,14 @@ function App() {
                 setCharAllowed((prev) => !prev);
               }}
             />
-            <label htmlFor="charInput">Characters</label>
+            <label htmlFor="charInput">Include Characters</label>
           </div>
+        </div>
+
+        <div className="btn">
+          <button className="generate" onClick={passwordGenerator}>
+            Generate New Password
+          </button>
         </div>
       </div>
     </div>
