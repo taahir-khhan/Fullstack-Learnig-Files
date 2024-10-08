@@ -6,7 +6,7 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
-  const [isCopied, setIsCopied] = useState(false); // State for copy feedback
+  const [isCopied, setIsCopied] = useState(false);
 
   // useRef Hook
   const passwordRef = useRef(null);
