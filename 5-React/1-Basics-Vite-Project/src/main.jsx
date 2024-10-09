@@ -5,7 +5,7 @@ import App from "./App.jsx";
 /* ======= Different Approach to render the components in react ======= */
 
 /* 
-  - Naming convention is always starts with capital letter. 
+  - Component naming convention is always starts with capital letter. 
   - This component returns jsx (HTML like code). 
   - It will transform into a React element (an Object) before rendering it.
 */

@@ -7,8 +7,6 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
   const [isCopied, setIsCopied] = useState(false);
-
-  // useRef Hook
   const passwordRef = useRef(null);
 
   const passwordGenerator = useCallback(() => {
@@ -33,7 +31,7 @@ function App() {
   const copyPasswordToClipboard = useCallback(() => {
     if (passwordRef.current) {
       passwordRef.current.select();
-      passwordRef.current.setSelectionRange(0, password.length);
+      passwordRef.current.setSelectionRange(0, 10);
       navigator.clipboard
         .writeText(password)
         .then(() => {
@@ -58,10 +56,7 @@ function App() {
             readOnly
             ref={passwordRef}
           />
-          <button
-            className={`copy ${isCopied ? "copied" : ""}`}
-            onClick={copyPasswordToClipboard}
-          >
+          <button className={`copy`} onClick={copyPasswordToClipboard}>
             {isCopied ? "Copied!" : "Copy"}
           </button>
         </div>
@@ -75,7 +70,7 @@ function App() {
               id="rangeInput"
               value={length}
               onChange={(e) => {
-                setLength(parseInt(e.target.value, 10));
+                setLength(parseInt(e.target.value));
               }}
             />
             <label htmlFor="rangeInput">Length: {length}</label>
