@@ -12,6 +12,11 @@ function App() {
 
   const options = Object.keys(currencyInfo);
 
+  const handleAmountChange = (newAmount) => {
+    // Update the amount only if it's different from the current value
+    setAmount(newAmount);
+  };
+
   const swap = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
@@ -43,8 +48,8 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => setAmount(amount)}
-                onAmountChange={(amount) => setAmount(amount)}
+                onCurrencyChange={() => setAmount(amount)}
+                onAmountChange={handleAmountChange}
                 selectCurrency={fromCurrency}
               />
             </div>

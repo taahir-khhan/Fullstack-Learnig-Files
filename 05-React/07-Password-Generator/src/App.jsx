@@ -36,7 +36,7 @@ function App() {
         .writeText(password)
         .then(() => {
           setIsCopied(true);
-          setTimeout(() => setIsCopied(false), 1500); // Reset after 1.5 seconds
+          setTimeout(() => setIsCopied(false), 1500);
         })
         .catch((err) => {
           console.error("Failed to copy: ", err);
