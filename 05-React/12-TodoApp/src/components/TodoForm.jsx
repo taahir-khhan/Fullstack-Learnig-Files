@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { TodoContext, useTodo } from "../context";
+import { useTodo } from "../context";
 
 function TodoForm() {
-  const [todoText, setTodoText] = useState("");
+  const [todoInputText, setTodoInputText] = useState("");
 
   const { addTodo } = useTodo();
 
   const add = (e) => {
     e.preventDefault();
-    if (!todoText) return;
-    addTodo({ todoMsg: todoText, marked: false });
-    setTodoText("");
+    if (!todoInputText) return;
+    addTodo({ todoMsg: todoInputText, marked: false });
+    setTodoInputText("");
   };
 
   return (
@@ -19,8 +19,8 @@ function TodoForm() {
         type="text"
         placeholder="Write Todo..."
         className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
-        value={todoText}
-        onChange={(e) => setTodoText(e.target.value)}
+        value={todoInputText}
+        onChange={(e) => setTodoInputText(e.target.value)}
       />
       <button
         type="submit"
