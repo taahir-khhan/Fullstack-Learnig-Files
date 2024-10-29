@@ -16,7 +16,7 @@ function App() {
   };
   return (
     <>
-      <h1>Counter App {counter}</h1>
+      <h1>Counter {counter} App </h1>
       <button onClick={increaseCnt}>Add {counter}</button>
       <button onClick={decreaseCnt}>Remove {counter}</button>
     </>

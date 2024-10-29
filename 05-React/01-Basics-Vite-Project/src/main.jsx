@@ -54,13 +54,15 @@ createRoot(document.getElementById("root")).render(
   // MyApp()
 
   // This is the way we render the react components
-  // <MyApp />
+  // <MyApp />,
 
   // This will not render anything, beacuse it is a custom React Object
   // element
 
-  // anotherEle
+  // It contains JSX, so it will be render on the page
+  // anotherEle,
 
+  // This is also will render on the page
   // reactEle
 
   <App />

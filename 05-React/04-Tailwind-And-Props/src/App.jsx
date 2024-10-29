@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <h1 className="bg-gray-600 text-white p-4 rounded-lg mb-4">
+      <h1 className="bg-gray-800 text-white p-4 rounded-lg mb-4">
         Main Heading
       </h1>
       <Card

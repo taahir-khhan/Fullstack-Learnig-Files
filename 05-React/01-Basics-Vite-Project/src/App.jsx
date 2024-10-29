@@ -1,11 +1,13 @@
-import Learn from "./Learn";
+import Learn from "./components/Learn";
 
 function App() {
   let value = "Khan";
-  // Inserting variables inside an HTML tag.
   return (
     <>
-      <h1>Started Learning React from chai aur code | Tahir {value} </h1>
+      <h1>
+        Started Learning React from chai aur code | Tahir {value} - Inserting
+        variable inside an element
+      </h1>
       <Learn />
     </>
   );
