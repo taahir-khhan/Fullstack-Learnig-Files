@@ -1,3 +1,1 @@
-Add edit feature in redux toolkit todo App, if possible add more features.
-
-Revise React properly and web Fundamentals.
+Revise from password generator React
