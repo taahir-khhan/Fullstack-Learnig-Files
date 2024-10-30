@@ -11,6 +11,15 @@ function App() {
   const currencyInfo = useCurrencyInfo(fromCurrency);
 
   const options = Object.keys(currencyInfo);
+  let ourOption = options.filter((currency) => {
+    if (
+      currency === "inr" ||
+      currency === "usd" ||
+      currency === "eur" ||
+      currency === "sar"
+    )
+      return currency;
+  });
 
   const handleAmountChange = (newAmount) => {
     // Update the amount only if it's different from the current value
@@ -47,7 +56,7 @@ function App() {
               <InputBox
                 label="From"
                 amount={amount}
-                currencyOptions={options}
+                currencyOptions={ourOption}
                 onCurrencyChange={() => setAmount(amount)}
                 onAmountChange={handleAmountChange}
                 selectCurrency={fromCurrency}
@@ -66,7 +75,7 @@ function App() {
               <InputBox
                 label="To"
                 amount={convertedAmount}
-                currencyOptions={options}
+                currencyOptions={ourOption}
                 onCurrencyChange={(currency) => setToCurrency(currency)}
                 amountDisable
                 selectCurrency={toCurrency}
