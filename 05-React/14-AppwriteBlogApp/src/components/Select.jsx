@@ -4,7 +4,7 @@ function Select({ options, label, className, ...props }, ref) {
   const id = useId();
   return (
     <div className="w-full">
-      {label && <label htmlFor={id}></label>}
+      {label && <label htmlFor={id}>{label}</label>}
 
       <select
         id={id}
@@ -13,9 +13,9 @@ function Select({ options, label, className, ...props }, ref) {
         {...props}
       >
         {options?.map((option) => (
-          <options key={option} value={option}>
+          <option key={option} value={option}>
             {option}
-          </options>
+          </option>
         ))}
       </select>
     </div>

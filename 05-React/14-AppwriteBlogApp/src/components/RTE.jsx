@@ -1,6 +1,6 @@
+import { Editor } from "@tinymce/tinymce-react";
 import React from "react";
 import { Controller } from "react-hook-form";
-import { Editor } from "tinymce";
 
 function RTE({ name, control, label, defaultValue = "" }) {
   return (
@@ -10,11 +10,11 @@ function RTE({ name, control, label, defaultValue = "" }) {
       <Controller
         name={name || "content"}
         control={control}
-        render={({ field: { onchange } }) => (
+        render={({ field: { onChange } }) => (
           <Editor
             initialValue={defaultValue}
+            apiKey="aqgihm2bg9ytpesjzjda028bkc7uraf7qcis44ewhn2utn2u"
             init={{
-              initialValue: defaultValue,
               height: 500,
               menubar: true,
               plugins: [
@@ -40,11 +40,11 @@ function RTE({ name, control, label, defaultValue = "" }) {
                 "anchor",
               ],
               toolbar:
-                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
+                "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
               content_style:
                 "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
             }}
-            onEditorChange={onchange}
+            onEditorChange={onChange}
           />
         )}
       />

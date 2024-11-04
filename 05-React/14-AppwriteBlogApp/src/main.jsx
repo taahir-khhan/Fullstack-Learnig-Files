@@ -16,11 +16,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        children: <Home />,
+        element: <Home />,
       },
       {
         path: "/login",
-        children: (
+        element: (
           <AuthLayout authentication={false}>
             <Login />
           </AuthLayout>
@@ -28,35 +28,32 @@ const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        children: (
+        element: (
           <AuthLayout authentication={false}>
             <Signup />
           </AuthLayout>
         ),
       },
       {
-        path: "/all-posts",
-        children: (
+        path: "/all-post",
+        element: (
           <AuthLayout authentication>
-            {" "}
             <AllPosts />
           </AuthLayout>
         ),
       },
       {
         path: "/add-post",
-        children: (
+        element: (
           <AuthLayout authentication>
-            {" "}
             <AddPost />
           </AuthLayout>
         ),
       },
       {
         path: "/edit-post/:slug",
-        children: (
+        element: (
           <AuthLayout authentication>
-            {" "}
             <EditPost />
           </AuthLayout>
         ),
