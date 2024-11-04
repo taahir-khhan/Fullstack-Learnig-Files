@@ -1,1 +1,3 @@
 Revise from currency converter add some features React
+
+Revise yesterday developed features
