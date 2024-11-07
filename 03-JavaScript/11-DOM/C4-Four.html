@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 4</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="spices">
+      <li>Turmeric (Haldi)</li>
+    </ul>
+
+    <ul class="grocery">
+      <li class="item">Colgate</li>
+      <li class="item">Brush</li>
+      <li class="item">Sabun</li>
+      <li class="item">Tel</li>
+    </ul>
+  </body>
+  <script>
+    // ========= Adding items to the list (Normal Approach). =========
+
+    function addSpices(spiceName) {
+      const list = document.createElement("li");
+      // Every time you call innerHTML, it will traverse the document tree & then add the content, which takes more time.
+      list.innerHTML = `${spiceName}`;
+      document.querySelector(".spices").appendChild(list);
+    }
+
+    addSpices("Chilli (Mirchi)");
+    addSpices("Coriander (Dhaniya)");
+
+    // ========= Using appendChild() method (Optimized approach). =========
+
+    function addMoreSpices(spiceName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(spiceName));
+      document.querySelector(".spices").appendChild(li);
+    }
+
+    addMoreSpices("Chicken Masala");
+
+    // ========= replaceWith() =========
+
+    const fourthChild = document.querySelector(".item:nth-child(2)");
+    const newLi = document.createElement("li");
+    newLi.appendChild(document.createTextNode("Brush Teeth"));
+    fourthChild.replaceWith(newLi);
+
+    // ========= outerHTML =========
+
+    const firstChild = document.querySelector(".item:first-child");
+    firstChild.outerHTML = "<li>Colgate for brushing teeth</li>";
+
+    // ========= remove() =========
+
+    const lastChild = document.querySelector(".item:last-child");
+    lastChild.remove();
+  </script>
+</html>
