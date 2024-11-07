@@ -5,8 +5,6 @@ import Profile from "./components/Profile";
 import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <UserContextProvider>
       <h1>Learning about context API</h1>

@@ -4,13 +4,13 @@ import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
 function App() {
   const [amount, setAmount] = useState(0);
+  const [convertedAmount, setConvertedAmount] = useState(0);
   const [fromCurrency, setFromCurrency] = useState("usd");
   const [toCurrency, setToCurrency] = useState("inr");
-  const [convertedAmount, setConvertedAmount] = useState(0);
 
   const currencyInfo = useCurrencyInfo(fromCurrency);
-
   const options = Object.keys(currencyInfo);
+
   let ourOption = options.filter((currency) => {
     if (
       currency === "inr" ||
@@ -29,12 +29,14 @@ function App() {
   const swap = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
-    setAmount(convertedAmount);
-    setConvertedAmount(amount);
+    setAmount(0);
+    setConvertedAmount(0);
   };
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[toCurrency]);
+    let value = amount * currencyInfo[toCurrency];
+    let preciseValue = value.toFixed(2);
+    setConvertedAmount(preciseValue);
   };
 
   return (
@@ -57,11 +59,12 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={ourOption}
-                onCurrencyChange={() => setAmount(amount)}
+                onCurrencyChange={(currency) => setFromCurrency(currency)}
                 onAmountChange={handleAmountChange}
                 selectCurrency={fromCurrency}
               />
             </div>
+
             <div className="relative w-full h-0.5">
               <button
                 type="button"
@@ -71,16 +74,17 @@ function App() {
                 swap
               </button>
             </div>
+
             <div className="w-full mt-1 mb-4">
               <InputBox
                 label="To"
                 amount={convertedAmount}
                 currencyOptions={ourOption}
                 onCurrencyChange={(currency) => setToCurrency(currency)}
-                amountDisable
                 selectCurrency={toCurrency}
               />
             </div>
+
             <button
               type="submit"
               className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg"

@@ -1,18 +1,24 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from "react-router-dom";
-import About from "./components/About/About.jsx";
-import Contact from "./components/Contact/Contact.jsx";
-import Github, { githubInfoLoader } from "./components/Github/Github.jsx";
-import Home from "./components/Home/Home.jsx";
-import User from "./components/User/User.jsx";
-import "./index.css";
 import Layout from "./Layout.jsx";
+
+import {
+  About,
+  Contact,
+  Github,
+  githubInfoLoader,
+  Home,
+  User,
+} from "./components/index.js";
+
+import "./index.css";
 
 // Create the router Method-1
 // const router = createBrowserRouter([
@@ -37,7 +43,7 @@ import Layout from "./Layout.jsx";
 // ]);
 
 // Create the router Method-2
-const router = createBrowserRouter(
+const provideRouting = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
@@ -51,6 +57,6 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={provideRouting} />
   </StrictMode>
 );
