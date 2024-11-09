@@ -8,6 +8,7 @@ function App() {
     //   <Button />
     //   <ResponsiveCard />
     // </div>
+
     <div className="bg-slate-700">
       <LandingPage />
     </div>
