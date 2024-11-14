@@ -6,7 +6,7 @@
 console.log(a);
 var a = 10;
 
-// Redeclaring and initialzing the 'var' variable
+// Redeclaring and re-initialzing the 'var' variable
 var a = "Hii";
 console.log(a);
 

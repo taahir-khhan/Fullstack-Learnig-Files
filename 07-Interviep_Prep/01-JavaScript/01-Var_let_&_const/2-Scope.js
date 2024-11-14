@@ -1,15 +1,13 @@
 /* ======== Scope ========
   - A scope is place where defined variables are exist and can be recognized, beyond that scope it can't.
   
-  - Scope is crucial because it dictates where variables and functions are "visible" or "usable", which helps organize code and avoid conflicts.
+  - Scope  defines where variables and functions are "visible" and "usable", which helps us to organize the code and avoid conflicts.
 */
 
 /* ======== Global Scope ========
-  - Variables declared outside any function or block have global scope.
+  - Variables declared outside any function or block scope have global scope, which is accessible to any part of the code.
   
-  - These variables are accessible from any part of the code.
-  
-  - However, global variables can lead to issues in larger applications due to potential naming conflicts or unintended modifications.
+  - However, global variables can lead to problems in larger application due to potential naming conflicts or unintended modifications.
 */
 
 let globalVariable = "I am global!";
@@ -21,9 +19,9 @@ function testFunction() {
 testFunction();
 
 /* ======== Local Scope (Function Scope) ========
-  - Variables declared within a function are in local or function scope.
+  - Variables declared within a function scope are local to that perticular scope. 
   
-  - These variables are only accessible within that function and not outside of it.
+  - These variables are only accessible within that scope and not outside of it.
 */
 
 function exampleFunction() {
@@ -32,12 +30,12 @@ function exampleFunction() {
 }
 
 exampleFunction();
-console.log(localVariable); // Error: localVariable is not defined
+console.log(localVariable); // Not Accessilbe
 
 /* ======== Block Scope ========
   - Block scope is introduced with ES6 using let and const.
   
-  - Variables declared with let or const inside a block { } are confined to that block.
+  - Variables declared with let or const inside a block { } are confined to that perticular block.
   
   - Variables declared with var are not block-scoped; they are either function-scoped or globally scoped.
 */
@@ -47,4 +45,4 @@ if (true) {
   console.log(blockScopedVariable); // Accessible here
 }
 
-console.log(blockScopedVariable); // Error: blockScopedVariable is not defined
+console.log(blockScopedVariable); // Not Accessible
