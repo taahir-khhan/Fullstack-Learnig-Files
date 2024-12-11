@@ -1,12 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Registration Form</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      body {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        background-color: #1b1b32;
+        color: #f5f6f7;
+        font-family: Tahoma;
+        font-size: 16px;
+      }
+
+      h1,
+      p {
+        margin: 1em auto;
+        text-align: center;
+      }
+
+      form {
+        width: 60vw;
+        max-width: 500px;
+        min-width: 300px;
+        margin: 0 auto;
+        padding-bottom: 2em;
+      }
+
+      fieldset {
+        border: none;
+        padding: 2rem 0;
+        border-bottom: 3px solid #3b3b4f;
+      }
+
+      fieldset:last-of-type {
+        border-bottom: none;
+      }
+
+      label {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      input,
+      textarea,
+      select {
+        margin: 10px 0 0 0;
+        width: 100%;
+        min-height: 2em;
+      }
+
+      input,
+      textarea {
+        background-color: #0a0a23;
+        border: 1px solid #0a0a23;
+        color: #ffffff;
+      }
+
+      .inline {
+        width: unset;
+        margin: 0 0.5em 0 0;
+        vertical-align: middle;
+      }
+
+      input[type="submit"] {
+        display: block;
+        width: 40%;
+        margin: 1em auto;
+        height: 2em;
+        font-size: 1.1rem;
+        background-color: #3b3b4f;
+        border-color: white;
+        min-width: 200px;
+      }
+
+      input[type="file"] {
+        padding: 1px 2px;
+      }
+
+      a {
+        color: #dfdfe2;
+      }
+    </style>
   </head>
   <body>
-
     <h1>Registration Form</h1>
     <p>Please fill out this form with the required information</p>
 
@@ -18,14 +96,13 @@
                   - This attribute specifies how to send form data to the URL specified in action attribute.
       -->
 
-    <form method="post" action='https://register-demo.freecodecamp.org'>
-      
+    <form method="post" action="https://register-demo.freecodecamp.org">
       <!-- Fieldset
             - This elements is used to group related inputs & lables together in a web form.
             - It is a block label element takes entire width of the screen.
       -->
       <fieldset>
-          <!-- Labels
+        <!-- Labels
                   - It defines label for input elements.
                   - These are inline elements
                   -> for = "id-name" 
@@ -38,33 +115,70 @@
         <input type="text" name="last-name" id="last-name" required />
 
         <label for="email">Enter Your Email:</label>
-        <input type="email" id="email" name="email"  required />
+        <input type="email" id="email" name="email" required />
 
         <!-- minlength
             - The password length must be 8. below element
         -->
         <label for="old-pass">Old Password: </label>
-        <input type="password" name="old-pass" id="old-pass" minlength="8" required>
+        <input
+          type="password"
+          name="old-pass"
+          id="old-pass"
+          minlength="8"
+          required
+        />
 
         <!-- pattern
             - If we use pattern attribute, we shouldn't use minlength, because it is already defined in the pattern.
             - The below pattern require, the password must contain a-z, 0-5 & length should be 8.
         -->
         <label for="new-password">Create a New Password:</label>
-        <input type="password"  name="new-password" id="new-password" pattern="[a-z0-5]{8,}" required />
+        <input
+          type="password"
+          name="new-password"
+          id="new-password"
+          pattern="[a-z0-5]{8,}"
+          required
+        />
       </fieldset>
 
       <fieldset>
         <!-- Radio Input
             - To make radio buttons selectable one at a time, give them same name attribute.
          -->
-        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" /> Personal Account</label>
+        <label for="personal-account"
+          ><input
+            id="personal-account"
+            type="radio"
+            name="account-type"
+            class="inline"
+          />
+          Personal Account</label
+        >
 
-        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> Business Account</label>
+        <label for="business-account"
+          ><input
+            id="business-account"
+            type="radio"
+            name="account-type"
+            class="inline"
+          />
+          Business Account</label
+        >
 
         <label for="terms-and-conditions">
-          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="inline" /> 
-          I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a>
+          <input
+            id="terms-and-conditions"
+            type="checkbox"
+            required
+            name="terms-and-conditions"
+            class="inline"
+          />
+          I accept the
+          <a href="https://www.freecodecamp.org/news/terms-of-service/"
+            >terms and conditions</a
+          >
         </label>
       </fieldset>
 
@@ -72,15 +186,22 @@
         <!-- File
             - Upload files from your device
          -->
-        <label for="profile-picture">Upload a profile picture: <input id="profile-picture" type="file" name="file" /></label>
+        <label for="profile-picture"
+          >Upload a profile picture:
+          <input id="profile-picture" type="file" name="file"
+        /></label>
 
         <!-- Number
             - Minimum number you can enter is 13 & maximum is 120
          -->
-        <label for="age">Input your age (years): <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="age"
+          >Input your age (years):
+          <input id="age" type="number" name="age" min="13" max="120"
+        /></label>
 
-        <label for="referrer">How did you hear about us?
-            <!-- Dropdown
+        <label for="referrer"
+          >How did you hear about us?
+          <!-- Dropdown
                   - 
             -->
           <select id="referrer" name="referrer">
@@ -91,17 +212,24 @@
             <option value="4">Other</option>
           </select>
         </label>
-        
-        <label for="bio">Provide a bio:
-            <!-- Textarea
+
+        <label for="bio"
+          >Provide a bio:
+          <!-- Textarea
                   - It takes input of multi line text.
                   - row = "value" -> To increase the size in terms of height.
                   - col = "value" -> To increase the size in terms of width.
             -->
-          <textarea id="bio" name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+          <textarea
+            id="bio"
+            name="bio"
+            rows="3"
+            cols="30"
+            placeholder="I like coding on the beach..."
+          ></textarea>
         </label>
       </fieldset>
-      
+
       <!-- Others important attributes
             -> name = "name-of-the-input-element"
                   - It is useful and good practice to provide each submittable element with a name attribute.
@@ -117,6 +245,5 @@
       -->
       <input type="submit" value="Submit" />
     </form>
-
   </body>
 </html>

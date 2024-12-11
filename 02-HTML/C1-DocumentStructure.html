@@ -1,0 +1,48 @@
+<!-- The Below Node tells the Browser to use standard modes i.e latest HTML-5 Vesrion  -->
+<!DOCTYPE html>
+
+<!-- Root Element of the Document -->
+<html lang="en">
+  <!-- Contains all the Meta-Data for a site or application -->
+  <head>
+    <!-- Required components inside the <head> -->
+
+    <!-- 1) Character Encoding (UTF - Unicode Transformation format)
+            - It should comes before the title to ensure the browser can render the characters in that title and all the characters in the rest of the document.
+            - We can even include emojis in our title (but please don't).
+      -->
+    <meta charset="UTF-8" />
+
+    <!-- 2) Viewport MetaData
+            - helps site responsiveness, enabling content to render well by default, no matter the viewport width.
+      -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--  3) Document title
+            - Your home page and other additional pages, each should have a unique title.
+      -->
+    <title>Document Structure</title>
+
+    <style>
+      body {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <!-- - Most of the coding written inside the Body Section, which will be displayed inside the Browser  -->
+  <body>
+    <!-- Language Attribute (Global)
+            - Defines the language of the Element
+            - It is a global attribute, which is not limited to the Root Element.
+      -->
+    <p>
+      This paragraph is English, but the language is not specifically defined.
+    </p>
+    <p lang="en-GB">This paragraph is defined as British English</p>
+    <p lang="fr">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, ab?
+    </p>
+  </body>
+</html>

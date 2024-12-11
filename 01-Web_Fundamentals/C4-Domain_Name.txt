@@ -6,14 +6,11 @@ Domain Name :-
 
       - In plain English, a domain name is the text that a user types into a browser window to reach a particular website.
 
-      - The actual address of a website is a complex numerical IP address (e.g. 192.0.2.2), but thanks to DNS,
-      users are able to enter human-friendly domain names and be routed to the websites they are looking for.
+      - The actual address of a website is a complex numerical IP address (e.g. 192.0.2.2), but thanks to DNS, users are able to enter human-friendly domain names and be routed to the websites they are looking for.
 
 
 Difference between Domain Name & URL ?
 
-      - A uniform resource locator (URL), sometimes called a web address, contains the domain name of a site as well as other 
-      information, including the protocol and the path.
+      - A uniform resource locator (URL), sometimes called a web address, contains the domain name of a site as well as other information, including the protocol and the path.
 
-      - For example, in the URL ‘https://cloudflare.com/learning/’, ‘cloudflare.com’ is the domain name,
-      while HTTPS is the protocol and ‘/learning/’ is the path to a specific page on the website.
+      - For example, in the URL ‘https://cloudflare.com/learning/’, ‘cloudflare.com’ is the domain name, while HTTPS is the protocol and ‘/learning/’ is the path to a specific page on the website.

@@ -4,10 +4,8 @@ Browsers :-
 
       - It retrieves web pages, processes content, and present it to user in a visually appealing and interactive format.
 
-      -The entire process involves multiple protocols, technologies, and layers of abstraction to provides
-      a seamless and secure browsing experience.
+      -The entire process involves multiple protocols, technologies, and layers of abstraction to provides a seamless and secure browsing experience.
 
 Working :-
   
-  HTTPS Request -> DNS Resolution -> Server Communication -> HTML Rendering ->  CSS Styling ->
-  Javascript Execution ->  Rendering the Page ->  User Interaction.
+  HTTPS Request -> DNS Resolution -> Server Communication -> HTML Rendering ->  CSS Styling -> Javascript Execution ->  Rendering the Page ->  User Interaction.
