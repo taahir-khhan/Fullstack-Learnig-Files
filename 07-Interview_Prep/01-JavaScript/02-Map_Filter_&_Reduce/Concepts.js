@@ -11,9 +11,22 @@ const multiplyThree = nums.map((num, idx, arr) => {
   return num * 3;
 });
 
-console.log(multiplyThree); // [ 3, 6, 9, 12, 15 ]
+// console.log(multiplyThree); // [ 3, 6, 9, 12, 15 ]
 
 // Pollyfil
+Array.prototype.myMap = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    temp.push(cb(this[i], i, this));
+  }
+  return temp;
+};
+
+const multiplyTwo = nums.myMap((num, idx, arr) => {
+  return num * 2;
+});
+
+// console.log(multiplyTwo);
 
 /*  ========= Filter =========
 
@@ -30,7 +43,7 @@ const greaterThanThirty = nums2.filter((num, idx, arr) => {
   return num > 30;
 });
 
-console.log(greaterThanThirty); // [ 40, 50 ]
+// console.log(greaterThanThirty); // [ 40, 50 ]
 
 const book = [
   { title: "book One", genre: "Fiction", publish: 1981, edition: 2004 },
@@ -46,7 +59,24 @@ const book = [
 
 // Filter the book according to genre of fiction
 let ans1 = book.filter((item) => item.genre === "Fiction");
-console.log(ans1, "\n");
+// console.log(ans1, "\n");
+
+// Pollyfil
+Array.prototype.myFilter = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i], i, this)) {
+      temp.push(this[i]);
+    }
+  }
+  return temp;
+};
+
+let lessThanThirty = nums2.myFilter((num) => {
+  return num < 30;
+});
+
+// console.log(lessThanThirty);
 
 /*  ========= Reduce =========
 
@@ -61,4 +91,21 @@ const sum = nums3.reduce((acc, num, idx, arr) => {
   return acc + num;
 }, 100); // Here we provided the initial value.
 
-console.log(sum); // 1600
+// console.log(sum); // 1600
+
+//Polyfill
+Array.prototype.myReduce = function (cb, initialVal) {
+  let accumulator = initialVal !== undefined ? initialVal : this[0];
+  const startIndex = initialVal !== undefined ? 0 : 1;
+
+  for (let i = startIndex; i < this.length; i++) {
+    accumulator = cb(accumulator, this[i], i, this);
+  }
+  return accumulator;
+};
+
+let anotherSum = nums3.myReduce((acc, num) => {
+  return acc + num;
+});
+
+console.log(anotherSum);
