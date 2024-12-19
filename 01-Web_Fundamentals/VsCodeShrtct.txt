@@ -18,8 +18,12 @@ ctrl + D -> Find similar word
 
 Ctrl + U  -> Undo the match
 
-ctrl + P  ->  search files
+ctrl + P  ->  search files faster
 
 Ctrl + I  -> Trigger suggestion manually
 
 Ctrl + ~ -> Open terminal
+
+Ctrl + w -> To close the current file
+
+Ctrl + X -> Delete the whole line
