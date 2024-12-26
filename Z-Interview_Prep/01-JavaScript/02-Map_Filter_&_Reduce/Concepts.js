@@ -1,8 +1,8 @@
 /*  ========= Map =========
 
-   -It is an array method, which itarte over an array and return a new array based on the condition defined. And doesn't modify the original array.
+  -It is an array method, which itarte over an array and return a new array based on the condition defined. And doesn't modify the original array.
 
-   - It can return any value, including different datatypes and have access to each element, index and the whole array.
+  - It can return any value, including different datatypes and have access to each element, index and the whole array.
 */
 
 const nums = [1, 2, 3, 4, 5];

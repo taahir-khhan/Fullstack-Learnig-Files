@@ -1,6 +1,6 @@
 /* Q1 - What is function declaration ? 
     
-    - The code below is normal function declaration, function statement or function defination
+  - The code below is normal function declaration, function statement or function defination
 */
 
 function print(nums) {
@@ -11,17 +11,17 @@ function print(nums) {
 
 /* Q2 - What is function Expression ? 
     
-    - When we can pass a fuction as expression, means assigned to a varibles or passed as arguments.
+  - When we can pass a fuction as expression, means assigned to a varibles or passed as arguments.
 */
 
 /* ======= Anonymous function expression =======
     
-    - A function without a name, are often used as function expression or callback passed to other functions.
+  - A function without a name, are often used as function expression or callback passed to other functions.
 
-    - Anonymous function doesn't work independently
-    function () {
-        console.log("Namatey");
-    }
+  - Anonymous function doesn't work independently
+  function () {
+      console.log("Namatey");
+  }
 */
 
 const sum = function (x, y) {
@@ -45,7 +45,7 @@ const val = test(function (num) {
 
 /* ======= Named function expression =======
     
-    - ans() can't be call like that, because it is not defined in this scope
+  - ans() can't be call like that, because it is not defined in this scope
 */
 const named = function ans(a, b) {
   return a - b;
@@ -54,9 +54,9 @@ const named = function ans(a, b) {
 
 /* ======= First class function =======
     
-    - All the functions in javascript are first class citizen.
+  - All the functions in javascript are first class citizen.
     
-    - That means function are treated as data and can be manipulated just like any other data
+  - That means function are treated as data and can be manipulated just like any other data
 */
 
 function add(a, b) {
@@ -72,7 +72,7 @@ let ans = takeInput(add);
 
 /* ======= Higher order function =======
     
-    - Function that operates on other function by taking them as argument
+  - Function that operates on other function by taking them as argument
 */
 
 function subs(a, b) {
