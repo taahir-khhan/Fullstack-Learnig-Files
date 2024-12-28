@@ -1,0 +1,2 @@
+Sat Dec 28 2024 - Application started 
+Sat Dec 28 2024 - Application event occured 
