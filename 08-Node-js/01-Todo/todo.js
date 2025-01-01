@@ -1,3 +1,5 @@
+// To execute this code, run this command, node 01-Todo/todo.js add "add content" at filepath 08-Node-js
+
 const fs = require("fs");
 const filepath = "./task.json";
 
