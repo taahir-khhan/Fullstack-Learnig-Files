@@ -1,7 +1,8 @@
+import "dotenv/config";
 import express from "express";
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 7000;
 app.use(express.json());
 
 const userData = [];
