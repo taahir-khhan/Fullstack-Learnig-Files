@@ -11,7 +11,9 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/new-year") {
     res.statusCode = 200;
     res.setHeader("content-type", "text/plain");
-    res.end("2025 is coming, we are literally going to die");
+    res.end(
+      "2025 is coming, we are literally going to die, not today but on every passing year we are more closer to death than previous year"
+    );
   } else {
     res.statusCode = 404;
     res.setHeader("content-type", "text/plain");

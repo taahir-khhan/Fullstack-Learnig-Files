@@ -1,0 +1,5 @@
+{
+      "watch": ["*.js", "*.html", "*.css"],
+      "ext": "js,html,css"
+}
+    
