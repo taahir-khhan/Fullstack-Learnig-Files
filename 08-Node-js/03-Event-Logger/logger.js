@@ -2,7 +2,6 @@ const fs = require("fs");
 const os = require("os");
 
 const EventEmitter = require("events");
-const { setInterval } = require("timers/promises");
 
 class Logger extends EventEmitter {
   log(message) {
@@ -23,7 +22,10 @@ logger.on("message", logToFile);
 setInterval(() => {
   const memoryUsage = (os.freemem() / os.totalmem()) * 100;
   logger.log(`Current memory usage: ${memoryUsage.toFixed(2)}%`);
-}, 1000);
+}, 1500);
 
 logger.log("Application started");
-logger.log("Application event occured");
+logger.log("Application event occurred");
+
+// Keep the process alive
+process.stdin.resume();
