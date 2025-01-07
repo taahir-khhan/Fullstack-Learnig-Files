@@ -10,10 +10,12 @@
   - However, global variables can lead to problems in larger application due to potential naming conflicts or unintended modifications.
 */
 
-let globalVariable = "I am global!";
+const globalVariable = "I am global!";
+var checking = true;
 
 function testFunction() {
-  console.log(globalVariable); // Accessible here
+  console.log(globalVariable, checking); // Accessible here
+  var checking = false;
 }
 
 testFunction();
@@ -30,7 +32,7 @@ function exampleFunction() {
 }
 
 exampleFunction();
-console.log(localVariable); // Not Accessilbe
+// console.log(localVariable); // Not Accessilbe
 
 /* ======== Block Scope ========
   - Block scope is introduced with ES6 using let and const.
@@ -42,7 +44,9 @@ console.log(localVariable); // Not Accessilbe
 
 if (true) {
   let blockScopedVariable = "I am block-scoped!";
+  var globalOrFunctionScope = "I am either global scoped or function scoped";
   console.log(blockScopedVariable); // Accessible here
 }
 
-console.log(blockScopedVariable); // Not Accessible
+// console.log(blockScopedVariable); // Not Accessible
+console.log(globalOrFunctionScope);

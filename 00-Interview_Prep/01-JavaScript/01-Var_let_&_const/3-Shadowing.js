@@ -25,8 +25,9 @@ function illegalShadow() {
   var z = 10;
 
   if (true) {
-    // var x = 11; // Illegal shadowing of `x & y`
+    // var x = 11; // Illegal shadowing of `x & y`, which is not possible
     // var y = 22;
+    // console.log(z);  // Now here the "z" is let type, so it not possible to access before initialization
 
     let z = 100; // This is valid because it is in a new block scope.
     console.log(x, y, z);

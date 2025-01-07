@@ -56,3 +56,12 @@ let totalMark60 = students
   .reduce((acc, stu) => acc + stu.mark, 0);
 
 console.log(totalMark60);
+
+// Spread and Rest Operator
+function spreadRest(...num) {
+  // here it is rest operator, it combines each element into an array. It is always defined in last parameter, otherwise it won't work
+  console.log(num);
+}
+
+const arr = [4, 9];
+spreadRest(...arr); // here it is spread operator, it converts all the array elements into single single element
