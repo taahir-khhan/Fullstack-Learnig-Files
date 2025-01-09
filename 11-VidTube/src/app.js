@@ -1,3 +1,4 @@
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 import morgan from "morgan";
@@ -5,7 +6,11 @@ import logger from "./logger.js";
 
 const app = express();
 
-// cors middleware, means only serve to allowed application to access this application data
+/*
+  - Allows only the specified domain (or domains) in the CORS_ORIGIN environment variable to access the application. If CORS_ORIGIN is set to *, it allows all origins.
+  
+  - Why This Matters: Helps prevent unauthorized access to the application by restricting which front-end applications can access its resources.
+*/
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
@@ -17,6 +22,7 @@ app.use(
 app.use(express.json({ limit: "16kb" }));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
+app.use(cookieParser());
 
 const morganFormat = ":method :url :status :response-time ms";
 
