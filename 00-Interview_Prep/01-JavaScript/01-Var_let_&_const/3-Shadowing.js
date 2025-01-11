@@ -16,7 +16,7 @@ console.log(name);
 /* ======== Illegal shadowing ========
   - Illegal shadowing occurs because var is function-scoped, meaning that it is accessible anywhere within the function, including nested blocks. 
   
-  - Therefore, if a variable is declared with let or const in a scope, you cannot redeclare it with var in the same function scope. Which is basically not allowed.
+  - Therefore, if a variable is declared with let or const in a scope, you cannot redeclare it with var in the same function scope. Which is basically not allowed & also known as "Illegal Shadowing".
 */
 
 function illegalShadow() {
@@ -27,10 +27,8 @@ function illegalShadow() {
   if (true) {
     // var x = 11; // Illegal shadowing of `x & y`, which is not possible
     // var y = 22;
-    // console.log(z);  // Now here the "z" is let type, so it not possible to access before initialization
-
-    let z = 100; // This is valid because it is in a new block scope.
-    console.log(x, y, z);
+    let z = 11;
+    console.log(z);
   }
   console.log(x, y, z);
 }
@@ -43,7 +41,8 @@ function validShadowing() {
   let y = 10;
   const z = 20;
   if (true) {
-    let y = 30; // different scope, different variable
+    // All of these is possible due to block scope nature of let & const. It doesn't matter until it is in another scope.
+    let y = 30;
     const z = 40;
     console.log(y, z);
   }

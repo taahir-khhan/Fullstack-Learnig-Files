@@ -1,3 +1,10 @@
-console.log(tsgs);
+let a = 10;
 
-var tsgs;
+function checkModification() {
+  a = 100;
+  console.log(a);
+}
+
+checkModification();
+
+console.log(a);

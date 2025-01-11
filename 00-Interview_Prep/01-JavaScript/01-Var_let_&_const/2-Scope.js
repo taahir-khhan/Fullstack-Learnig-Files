@@ -5,7 +5,7 @@
 */
 
 /* ======== Global Scope ========
-  - Variables declared outside any function or block scope have global scope, which is accessible to any part of the code.
+  - Variables declared outside of any function or block scope have global scope, which is accessible to any part of the code and you can modify the variables from any part of the code 
   
   - However, global variables can lead to problems in larger application due to potential naming conflicts or unintended modifications.
 */
