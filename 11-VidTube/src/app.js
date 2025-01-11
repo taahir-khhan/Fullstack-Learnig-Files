@@ -44,16 +44,10 @@ app.use(
 
 // import routes
 import healthcheckRouter from "./routes/healthcheck.routes.js";
-<<<<<<< HEAD
-
-// routes
-app.use("/api/v1/healthcheck", healthcheckRouter);
-=======
 import userRouter from "./routes/user.routes.js";
 
 // routes
 app.use("/api/v1/healthcheck", healthcheckRouter);
 app.use("/api/v1/users", userRouter);
->>>>>>> 121207d (Moved file and reconnected to repository)
 
 export { app };

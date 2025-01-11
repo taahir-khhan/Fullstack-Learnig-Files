@@ -1,3 +1,6 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"404\",\"responseTime\":\"4.022\"}","timestamp":"2025-01-08T06:21:41.670Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"404\",\"responseTime\":\"0.830\"}","timestamp":"2025-01-08T06:23:08.765Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"200\",\"responseTime\":\"2.752\"}","timestamp":"2025-01-08T06:25:18.550Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"200\",\"responseTime\":\"5.150\"}","timestamp":"2025-01-11T16:49:39.414Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthchec\",\"status\":\"404\",\"responseTime\":\"3.867\"}","timestamp":"2025-01-11T16:51:47.881Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/healthcheck\",\"status\":\"200\",\"responseTime\":\"1.139\"}","timestamp":"2025-01-11T16:51:54.694Z"}
