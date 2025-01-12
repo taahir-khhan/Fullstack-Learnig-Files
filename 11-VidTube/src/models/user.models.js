@@ -51,9 +51,9 @@ const userSchema = new Schema(
 
 userSchema.pre("save", async function (next) {
   // Simple thing here, only encrypt the password when it is added or updated, only then you will re-encrypt the password otherwise not
-  if (!this.modified("password")) return next();
+  if (!this.isModified("password")) return next();
 
-  this.password = bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 10);
 
   next();
 });

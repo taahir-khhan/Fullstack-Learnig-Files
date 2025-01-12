@@ -43,11 +43,13 @@ app.use(
 );
 
 // import routes
+import { errorHandler } from "./middlewares/error.middlewares.js";
 import healthcheckRouter from "./routes/healthcheck.routes.js";
 import userRouter from "./routes/user.routes.js";
 
 // routes
 app.use("/api/v1/healthcheck", healthcheckRouter);
 app.use("/api/v1/users", userRouter);
+app.use(errorHandler);
 
 export { app };
