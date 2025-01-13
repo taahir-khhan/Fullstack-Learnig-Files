@@ -1,6 +1,6 @@
 // ======== Ways of Declaring ========
 
-// Automatically knows that, it's a number
+// JS Automatically knows that, it's a number
 const score = 800;
 console.log(score);
 

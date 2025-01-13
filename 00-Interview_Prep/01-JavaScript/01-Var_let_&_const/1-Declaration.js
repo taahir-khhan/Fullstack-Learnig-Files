@@ -32,3 +32,24 @@ console.log(b);
 */
 const c = 10;
 console.log(c);
+
+/*  ========  Diffrence Between Var, let & Const  ========
+
+   Var:-
+      - Var type variables are functional scope.
+      - It can be redeclared & re-initialized  as many time as possible.
+      - declared without initialization.
+      - It can be accessed before declaration.
+
+   Let:-
+      - Let type of variables are block scoped.
+      -(Block is a certain region of program where variables are exist and identified, Beyond that it doesn't.)
+      - It can't be redeclared. But reinitialized as many time as possible.
+      - It can't be accessed before declaration.
+
+   Const:-
+      - Const are also block scoped.
+      - It should be intialized during declaration.
+      - It is not possible to re-initialize of redeclared.
+      - Same here
+*/

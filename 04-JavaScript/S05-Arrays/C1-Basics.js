@@ -20,7 +20,7 @@ numArr.push(false);
 console.log("After push operation: ", numArr);
 
 numArr.pop();
-console.log("After push operation: ", numArr, "\n");
+console.log("After pop operation: ", numArr, "\n");
 
 /* ========== Shift & Unshift Opeartion. ========== 
 
@@ -59,7 +59,7 @@ console.log("Array converted into string: ", store, "\n");
 
 /* ========== Slice & Splice ==========
 
-   - (startIdx, EndIdx) -> Exclude ending index Element  -> Doesn't have any impact in Original Array
+   - (startIdx, EndIdx) -> Exclude EndIdx element while extracting  -> Doesn't have any impact in Original Array
 
    - -1 is the last index, -2 is the second last element etc.
 */

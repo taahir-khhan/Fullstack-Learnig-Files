@@ -41,3 +41,18 @@ console.log(
   "Generate a random number between 1 - 6: ",
   Math.floor(Math.random() * (max - min + 1) + min)
 );
+
+const biggestNum = Number.MAX_VALUE;
+console.log(biggestNum);
+
+const smallestNum = Number.MIN_VALUE;
+console.log(smallestNum);
+
+const infiniteNum = Number.POSITIVE_INFINITY;
+console.log(infiniteNum);
+
+const negInfiniteNum = Number.NEGATIVE_INFINITY;
+console.log(negInfiniteNum);
+
+const notANum = Number.NaN;
+console.log(notANum);

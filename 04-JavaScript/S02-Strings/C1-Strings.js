@@ -1,5 +1,5 @@
 // Normal way of declaring string, it works simillar like object
-let userName = "Tahir Khan";
+let userName = "Tahir";
 console.log(userName, typeof userName, "\n");
 
 // Declaring through constructor

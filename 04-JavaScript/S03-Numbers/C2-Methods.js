@@ -13,7 +13,7 @@ console.log(otherBalance.toFixed(3), "\n");
    -Takes the most significant digits from the starting, in some cases it also round up the values. Range of argument is (0 - 100).
 */
 const id = 123.4249;
-console.log(id.toPrecision(3), "\n");
+console.log(id.toPrecision(4), "\n");
 
 const hundreds = 100000;
 console.log(hundreds.toLocaleString("en-IN"));

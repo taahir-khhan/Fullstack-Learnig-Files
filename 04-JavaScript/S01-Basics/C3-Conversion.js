@@ -1,9 +1,9 @@
 // ======= Conversion Into Number =======
 
-let value = 6352;
+let value = "6352";
 let convertedNum = Number(value);
 
-// console.log(convertedNum);
+console.log(convertedNum);
 
 /* Conversion of different values into number:
 
