@@ -12,10 +12,8 @@ const user = {
 // ======== Access ========
 console.log(user.name);
 console.log(user["name"]);
-
-// console.log(user.full name); Not possible
+// console.log(user.full name);  // Not possible
 console.log(user["full name"]); // Only way of accessing
-console.log(user.age, "\n");
 
 // ======== Modify ========
 user.age = 23;

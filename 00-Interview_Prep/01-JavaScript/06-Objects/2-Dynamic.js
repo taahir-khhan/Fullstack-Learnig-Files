@@ -28,9 +28,7 @@ console.log(x, "\n");
 // Example-3
 const y = {};
 
-// Until j value is srting it's fine , otherwise js engine convert the other values into string
-// while assigning the key of the object
-
+// As long as the "key" of the object a string it's fine. Otherwise, the JavaScript engine converts other values into strings, While assigning them as keys of the object.
 const j = 88;
 y[j] = 33;
 
