@@ -1,10 +1,11 @@
-// Adding dynamic property & value assignment in object
+// ======== Dynamic Object Creation ========
 
 // Example-1
 const key = "age";
 const val = 17;
 const user = {
   name: "Random user",
+  // Only if we use square brackets, it will consider variable value as key
   [key]: val,
 };
 console.log(user);

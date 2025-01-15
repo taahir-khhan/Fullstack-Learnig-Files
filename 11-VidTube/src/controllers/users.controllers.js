@@ -1,3 +1,4 @@
+import jwt from "jsonwebtoken";
 import { User } from "../models/user.models.js";
 import { ApiError } from "../utils/apiError.js";
 import { ApiResponse } from "../utils/apiResponse.js";
@@ -157,6 +158,59 @@ const loginUser = asyncHandler(async (req, res) => {
         "User logged in successfully"
       )
     );
+});
+
+const logOutUser = asyncHandler(async (req, res) => {});
+
+const refreshAccessToken = asyncHandler(async (req, res) => {
+  const incomingRefreshToken =
+    req.cookies.refreshToken || req.body.refreshToken;
+
+  if (!incomingRefreshToken) {
+    throw new ApiError(401, "Refresh token is required");
+  }
+
+  try {
+    const decodedToken = jwt.verify(
+      incomingRefreshToken,
+      process.env.REFRESH_TOKEN_SECRET
+    );
+
+    const user = await User.findById(decodedToken?.id);
+
+    if (!user) {
+      throw new ApiError(401, "Invalid refresh token");
+    }
+
+    if (incomingRefreshToken !== user?.refreshToken) {
+      throw new ApiError(401, "Invalid refresh token");
+    }
+
+    const options = {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+    };
+
+    const { accessToken, refreshToken: newRefreshToken } =
+      await generateAccessAndRefreshToken(user._id);
+
+    return res
+      .status(200)
+      .cookie("refreshToken", newRefreshToken, options)
+      .cookie("accessToken", accessToken, options)
+      .json(
+        new ApiResponse(
+          200,
+          { accessToken, refreshToken: newRefreshToken },
+          "Access token refreshed successfully"
+        )
+      );
+  } catch (error) {
+    throw new ApiError(
+      500,
+      "Something went wrong while refreshing access token"
+    );
+  }
 });
 
 export { loginUser, registerUser };
