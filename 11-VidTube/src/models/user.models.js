@@ -50,7 +50,7 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save", async function (next) {
-  // Simple thing here, only encrypt the password when it is added or updated, only then you will re-encrypt the password otherwise not
+  // Only encrypt the password when it is added or updated, only then you will re-encrypt the password otherwise not
   if (!this.isModified("password")) return next();
 
   this.password = await bcrypt.hash(this.password, 10);
@@ -58,7 +58,6 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-// This is for when user types the real password and stored password in DB is encrypted, but it basically decrypt the password and compare with stored password
 userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
