@@ -1,6 +1,6 @@
 // To execute this code, run this command, node 01-Todo/todo.js add "add content" at filepath 08-Node-js
 
-const fs = require("fs");
+import fs from "fs";
 const filepath = "./task.json";
 
 const loadTask = () => {
@@ -22,7 +22,7 @@ const addTask = (task) => {
   const tasks = loadTask();
   tasks.push({ task });
   saveTask(tasks);
-  console.log("Task Added is successfully");
+  console.log("Task Added successfully");
 };
 
 const listTask = () => {
@@ -32,8 +32,8 @@ const listTask = () => {
 
 const removeTask = (removeIdx) => {
   const tasks = loadTask();
-  const filterTask = tasks.filter((item, idx) => idx !== removeIdx);
-  saveTask(filterTask);
+  const filteredTask = tasks.filter((item, idx) => idx !== removeIdx);
+  saveTask(filteredTask);
   console.log(`${tasks[removeIdx].task} is removed`);
 };
 

@@ -1,6 +1,6 @@
-const fs = require("fs");
-const http = require("http");
-const path = require("path");
+import fs from "fs";
+import http from "http";
+import path from "path";
 
 const port = 5000;
 
