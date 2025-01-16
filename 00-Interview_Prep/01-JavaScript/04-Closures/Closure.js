@@ -10,11 +10,11 @@ const name = "Tahir Khan";
 
 function createClosure() {
   // Accessing outer scope variable
-  console.log(`Outer Scope Variable: ${name}`);
+  console.log(`Outer Scope Variable: ${name} \n`);
 
   function innerFunction(num) {
     // Accessing outer scope variable and inner scope variable
-    console.log(`Closure Access -> Name: ${name}, Number: ${num}`);
+    console.log(`Closure Access -> Name: ${name}, Number: ${num} \n`);
   }
 
   return innerFunction;

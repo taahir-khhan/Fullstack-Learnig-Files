@@ -1,6 +1,6 @@
 /* ======= Higher order function =======
     
-  - Function that operates on other function by taking them as argument
+  - Function that operates on other function by taking them as an argument
 */
 
 function add(a, b) {

@@ -1,27 +1,27 @@
-// Ques1 - What is the logged value ?
+// Question1 - What is the logged value ?
 
-// let count = 0;
-// (function () {
-//   if (count === 0) {
-//     let count = 1;
-//     console.log(count);
-//   }
-//   console.log(count);
-// })();
+let count = 0;
+(function () {
+  if (count === 0) {
+    let count = 1;
+    console.log(count);
+  }
+  console.log(count, "\n");
+})();
 
-// Ques2 - Write a function that would allow to do this
+// Question2 - Write a function that would allow to do this
 
-// function createBase(x) {
-//   return (y) => {
-//     return x + y;
-//   };
-// }
+function createBase(x) {
+  return (y) => {
+    return x + y;
+  };
+}
 
-// var addSix = createBase(6);
-// console.log(addSix(10));
-// console.log(addSix(21));
+var AddRandomValueWithSix = createBase(6);
+console.log(AddRandomValueWithSix(10));
+console.log(AddRandomValueWithSix(21), "\n");
 
-/* Quse3 - Time Optimization
+/* Question3 - Time Optimization
 
   - Without closures, every time we call find(argument), the loop executes and populates the array from scratch, which is computationally expensive.
   
@@ -30,43 +30,44 @@
   - Since the loop's execution is static (runs a fixed number of times and generates the same result), using closures is the optimal choice for performance and efficiency in this scenario.
 */
 
-// function find() {
-//   let nums = [];
-//   for (let i = 0; i < 1000000; i++) {
-//     nums[i] = i * i;
-//   }
+function find() {
+  let nums = [];
+  for (let i = 0; i < 1000000; i++) {
+    nums[i] = i * i;
+  }
 
-//   return (idx) => {
-//     console.log(nums[idx]);
-//   };
-// }
+  return (idx) => {
+    console.log(`Square of ${idx} is: ${nums[idx]}`);
+  };
+}
 
-// const closure = find();
-// console.time("6");
-// closure(6);
-// console.timeEnd("6");
+const closure = find();
+console.time("6");
+closure(6);
+console.timeEnd("6");
 
-// console.time("12");
-// closure(12);
-// console.timeEnd("12");
+console.time("12");
+closure(12);
+console.timeEnd("12");
+console.log("\n");
 
-// Ques4 - Block Scope & SetTimeout
+// Question4 - Block Scope & SetTimeout
 
-// // 1st Version
+// 1st Version - What is the output ?
 // for (var i = 0; i < 3; i++) {
 //   setTimeout(() => {
 //     console.log(i);
 //   }, i * 1000);
 // }
 
-// // 2nd Version
+// 2nd Version - What is the output ?
 // for (let i = 0; i < 3; i++) {
 //   setTimeout(() => {
 //     console.log(i);
 //   }, i * 1000);
 // }
 
-// // 3rd Version
+// 3rd Version
 // for (var i = 0; i < 3; i++) {
 //   function inner(i) {
 //     setTimeout(() => {
@@ -77,7 +78,7 @@
 //   inner(i);
 // }
 
-// Ques5 - How to use closure to create a private variable
+// Question5 - How to use closure to create a private variable
 
 function privateVariable() {
   var _counter = 0;
@@ -101,7 +102,7 @@ const value = privateVariable();
 // value.add(5);
 // value.retrive();
 
-// Ques6 - Module pattern - Learn more about this
+// Question6 - Module pattern - Learn more about this
 
 const Module = (function () {
   function privateMethod() {
@@ -119,7 +120,7 @@ const Module = (function () {
 
 // Module.publicMethod();
 
-// Ques7 - Call a function only once
+// Question7 - Call a function only once
 
 let check;
 function runOnce() {
@@ -185,12 +186,12 @@ function clumsyProduct(num1, num2) {
 
 const memoizeClumsyProduct = memoizedFun(clumsyProduct);
 
-console.time("First call");
-console.log(memoizeClumsyProduct(10, 11));
-console.timeEnd("First call");
+// console.time("First call");
+// console.log(memoizeClumsyProduct(10, 11));
+// console.timeEnd("First call");
 
-console.time("Second call");
-console.log(memoizeClumsyProduct(10, 12));
-console.timeEnd("Second call");
+// console.time("Second call");
+// console.log(memoizeClumsyProduct(10, 12));
+// console.timeEnd("Second call");
 
-// Ques9 - Difference between closure and scope
+// Question9 - Difference between closure and scope

@@ -18,7 +18,7 @@ const sum = function (x, y) {
 };
 console.log("Anonymous function, sum is:", sum(5, 6));
 
-// self invoking anonymous function
+// Self invoking Anonymous function
 (function () {
   console.log("I am self invoking function, hello");
 })();
@@ -26,15 +26,15 @@ console.log("Anonymous function, sum is:", sum(5, 6));
 function test(fun) {
   return fun(5);
 }
-// function passed as an argument in test()
+// Anonymous function passed as an argument
 const val = test(function (num) {
   return num * num;
 });
-console.log(val);
+console.log(val, "\n");
 
 /* ======= Named function expression =======
         
-  - In this case the function is only called by named(), it can't be called through ans(), because it is not defined in this scope
+  - In this case, the function is only called by named(), it can't be called through ans(), because it is not defined in this scope.
 */
 
 const named = function ans(a, b) {

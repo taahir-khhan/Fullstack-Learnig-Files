@@ -1,10 +1,13 @@
-let a = 10;
+import readline from "readline";
 
-function checkModification() {
-  a = 100;
-  console.log(a);
-}
+// Create an interface for input and output
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-checkModification();
-
-console.log(a);
+// Ask a question and handle user input
+rl.question("What is your name? ", (name) => {
+  console.log(`Hello, ${name}!`);
+  rl.close(); // Close the input stream
+});
