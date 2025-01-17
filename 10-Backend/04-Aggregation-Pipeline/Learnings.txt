@@ -1,0 +1,141 @@
+(1) How many Active users ?
+
+[
+  {
+    $match: {
+      isActive: true
+    }
+  },
+  {
+    $count: 'noOfActiveUser'
+  }
+]
+
+(2) Average age of the users ?
+
+[
+  {
+    $group: {
+      _id: null,
+      averageAge: {
+        $avg: "$age"
+      }
+    }
+  }
+]
+
+(3) List the top 2 most common favorite fruits ?
+
+[
+  {
+    $group: {
+      _id: "$favoriteFruit", 
+      count: {
+        $sum: 1
+      }
+    }
+  }, 
+  {
+    $sort: {
+      count: -1
+    }
+  },
+  {
+    $limit: 2
+  }
+]
+
+(4) Average number of tags per user ?
+
+[
+  {
+    // Its primary purpose is to deconstruct an array field in a document, creating a separate document for each element of the array  
+    $unwind: {
+      path: "$tags",
+
+      // This will add a property "arrayIdx" assigned with index value.
+      includeArrayIndex: "arrayIdx",
+
+      // If there are any documents which doesn't contains this tags property or tags property is empty array, it excludes that documents
+      preserveNullAndEmptyArrays: false
+    }
+  },
+  {
+    $group: {
+      _id: "$_id",
+      numberOfTags: {
+        $sum: 1
+      }
+    }
+  }, 
+  {
+  $group: {
+     _id: null,
+     averageNumberOfTags: {
+       $avg: "$numberOfTags"
+     }
+   }  
+  }
+]
+
+- Another way of doing the same thing
+[
+  {
+    $addFields: {
+      numberOfTags: {
+        $size: {$ifNull: ["$tags", []]}
+      }
+    }
+  }, 
+  {
+    $group: {
+      _id: null,
+      averageNumberOfTags: {
+        $avg: "$numberOfTags"
+      }
+    }
+  }
+]
+
+(5) How many users have 'enim' as one of their tags ?
+
+[
+  {
+    $match: {
+      tags: "id"
+    }
+  },
+  {
+    $count: 'userWithSpecificTag'
+  }
+]
+
+(6) What are the names and age of users who are inactive and have "velit" as tag ?
+
+[
+  {
+    $match: {
+      isActive: false,
+      tags: "velit"
+    }
+  },
+  {
+    $project: {
+      name: 1,
+      age: 1
+    }
+  }
+]
+
+(7) How many users have a phone number starting with '+1 (990)' ?
+
+[
+  {
+    $match: {
+      "company.phone": /^\+1 \(990\)/
+    }
+  },
+  {
+    $count: 'userCount'
+  }
+]
