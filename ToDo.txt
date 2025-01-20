@@ -1,2 +1,1 @@
-Revise from closure questions
-Then cover call, apply and bind
+Tommorow will be covering some more questions on call, apply and bind
