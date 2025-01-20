@@ -1,9 +1,23 @@
 import { Router } from "express";
-import { logOutUser, registerUser } from "../controllers/users.controllers.js";
+import {
+  changeCurrentPassword,
+  getCurrentUser,
+  getUserChannelProfile,
+  getWatchHistory,
+  loginUser,
+  logOutUser,
+  refreshAccessToken,
+  registerUser,
+  updateUserAvatar,
+  updateUserCoverImage,
+  updateUserDetails,
+} from "../controllers/users.controllers.js";
 import { verifyJWT } from "../middlewares/auth.middlewares.js";
 import { upload } from "../middlewares/multer.middlewares.js";
 
 const router = Router();
+
+// public route
 
 router.route("/register").post(
   upload.fields([
@@ -19,7 +33,21 @@ router.route("/register").post(
   registerUser
 );
 
+router.route("/login").post(loginUser);
+router.route("/refresh-token").post(refreshAccessToken);
+
 // secure route
 router.route("/logout").post(verifyJWT, logOutUser);
+router.route("/change-password").post(verifyJWT, changeCurrentPassword);
+router.route("/current-user").get(verifyJWT, getCurrentUser);
+router.route("/c/:username").get(verifyJWT, getUserChannelProfile);
+router.route("/update-account").patch(verifyJWT, updateUserDetails);
+router
+  .route("/avatar")
+  .patch(verifyJWT, upload.single("avatar"), updateUserAvatar);
+router
+  .route("/cover-image")
+  .patch(verifyJWT, upload.single("coverImage"), updateUserCoverImage);
+router.route("/watch-history").get(verifyJWT, getWatchHistory);
 
 export default router;
