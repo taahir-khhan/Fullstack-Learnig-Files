@@ -2,7 +2,7 @@
 
 /* ======== Call ========
   
-  - The call() method invokes a function immediately, allowing you to specify the this context and pass arguments one by one.
+  - The call() method invokes a function immediately, allowing you to specify the context of "this" keyword and pass arguments one by one.
 */
 
 let obj = { name: "Tahir" };
@@ -34,7 +34,7 @@ greet.apply(person, ["Hi", "evening"]);
 
 /* ======== Bind ========
 
-  - The bind() method returns a new function with the specified this context. It does not invoke the function immediately but allows you to create a copy of the function with a preset this value and optionally preset arguments. 
+  - The bind() method returns a new function with the specified "this" context. It does not invoke the function immediately but allows you to create a copy of the function with a preset this value and optionally preset arguments. 
 */
 
 const person2 = {

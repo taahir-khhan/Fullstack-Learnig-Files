@@ -1,1 +1,2 @@
-Revise properly the call, apply and bind, then move on to next
+We will be revising completely the "this" keyword section,
+Then covering more about promises in javascript.

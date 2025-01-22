@@ -67,7 +67,7 @@ const arr1 = ["a", "b", "c"];
 const arr2 = [4, 5, 6];
 
 arr1.push.apply(arr1, arr2);
-arr1.push(...arr2);
+// arr1.push(...arr2); // Easiest way to do this operation
 console.log(arr1, "\n");
 
 // Question-6 -> Find min/max in an array
@@ -76,17 +76,22 @@ const numbers = [5, 6, 2, 3, 7];
 console.log(Math.min.apply(null, numbers));
 console.log(Math.max.apply(null, numbers), "\n");
 
+// Easiest way to do this operation
+console.log(Math.min(...numbers));
+console.log(Math.max(...numbers), "\n");
+
 // Question-7 -> Tricky question
 
 function check() {
-  // console.log(this);
+  console.log(this, this.name);
 }
 
 const someObj = {
+  name: "Tahir",
   func: check.bind(null),
 };
 
-someObj.func();
+// someObj.func();
 
 // Question-8 -> Bind Chanining - Once the function is binded, it can't be rebinded.
 
@@ -141,7 +146,7 @@ let user = {
   },
 };
 
-// askPassword(user.login.bind(user, true), user.login.bind(user, false));
+// checkPassword(user.login.bind(user, true), user.login.bind(user, false));
 
 // Question-11 -> Explicit binding with arrow function
 
@@ -168,16 +173,6 @@ let car1 = {
   company: "Ferrari",
 };
 
-let car2 = {
-  color: "Blue",
-  company: "BMW",
-};
-
-let car3 = {
-  color: "White",
-  company: "Mercedes",
-};
-
 function purchaseCar(currency, price) {
   console.log(
     `I have purchased ${this.color} - ${this.company} car for ${currency}${price} \n`
@@ -193,9 +188,14 @@ Function.prototype.myCall = function (context = {}, ...args) {
   context.func(...args);
 };
 
-purchaseCar.myCall(car3, "₹", "60,00,000");
+purchaseCar.myCall(car1, "₹", "60,00,000");
 
 // Question-13 -> Polyfill for apply
+
+let car2 = {
+  color: "Blue",
+  company: "BMW",
+};
 
 function sayMyName(name, age) {
   console.log(`${name} is ${age} purchased ${this.color} ${this.company} \n`);
@@ -217,6 +217,11 @@ Function.prototype.myApply = function (context = {}, args = []) {
 sayMyName.myApply(car2, ["Tahir", 24]);
 
 // Question-14 -> Polyfill for bind
+
+let car3 = {
+  color: "White",
+  company: "Mercedes",
+};
 
 function sayMyNameAgain(currency, price) {
   console.log(`${this.color} ${this.company} is worth ${currency}${price} \n`);

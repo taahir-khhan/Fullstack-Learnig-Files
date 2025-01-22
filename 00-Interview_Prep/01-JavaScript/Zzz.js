@@ -1,13 +1,14 @@
-import readline from "readline";
+function check() {
+  console.log(this, this.name);
+}
 
-// Create an interface for input and output
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
+const others = {
+  name: "Khan",
+};
 
-// Ask a question and handle user input
-rl.question("What is your name? ", (name) => {
-  console.log(`Hello, ${name}!`);
-  rl.close(); // Close the input stream
-});
+const someObj = {
+  name: "Tahir",
+  func: check.bind(others),
+};
+
+someObj.func();
