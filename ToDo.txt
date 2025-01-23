@@ -1,2 +1,2 @@
-We will be revising completely the "this" keyword section,
+Cover Objects properly
 Then covering more about promises in javascript.

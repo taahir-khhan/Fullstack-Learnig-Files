@@ -1,6 +1,6 @@
 /*  ==========  Promises ========== 
 
-  -It is an object representing the eventual completion or failure of an asynchronous operation.
+  - It is an object representing the eventual completion or failure of an asynchronous operation.
 
   - Most of the time we consume promises, but in this document we will learn how to create promises first.
 */
@@ -46,7 +46,7 @@ new Promise(function (resolve, reject) {
   setTimeout(function () {
     console.log("Async task-2 is completed");
     resolve();
-  }, 1000);
+  }, 1100);
 }).then(function () {
   console.log("Promise-2 is also fulfilled \n");
 });
@@ -64,7 +64,7 @@ const promiseThree = new Promise(function (resolve, reject) {
     */
 
     resolve({ name: "Tahir", email: "tahirtrk42@gmail.com" });
-  }, 1000);
+  }, 1200);
 });
 
 promiseThree.then(function (obj) {
@@ -84,16 +84,16 @@ const promiseFour = new Promise(function (resolve, reject) {
       // Otherwise reject() will call catch().
       reject("ERROR: Something went wrong");
     }
-  }, 1000);
+  }, 1300);
 });
 
-// Chaining
+// ----- Chaining -----
 // We can't store the below code inside a variable, which is not possible
 
 promiseFour
   .then((obj) => {
     console.log(obj);
-    // This return statement returns the value to Another then()
+    // ----- This return statement returns the value to Another then() -----
     return obj[0];
   })
   .then((val) => {
@@ -103,12 +103,13 @@ promiseFour
     console.log(str);
   })
   .finally(() => {
-    // Every time this method will run either the promise is rjected or resolved.
+    // ----- Every time this method will run either the promise is rjected or resolved -----
     console.log("Finally the promise is either Resolved or Rejected");
     console.log("Promise-4 is also fulfilled \n");
   });
 
 // 5) ========== Promise Five (Async Await) ==========
+// Handling promises without using then() & catch().
 
 const promiseFive = new Promise(function (resolve, reject) {
   setTimeout(function () {
@@ -118,19 +119,19 @@ const promiseFive = new Promise(function (resolve, reject) {
     } else {
       reject("ERROR: Some error occured");
     }
-  }, 1000);
+  }, 1400);
 });
 
-// Another approach of handling promises without using the then() & catch() method.
 async function consumePromise() {
-  // When a promise is resolved then it goes to try block,And when rejected goes to the catch block.
+  // ----- Resolved promise goes to try Block, Otherwise catch block -----
   try {
     // Here we can store it inside a variable due to async & await, And it will store resolve() method returned vlaue;
     const response = await promiseFive;
     console.log(response);
-    console.log("Promise-5 is also fulfilled \n");
+    console.log("Promise-5 is also fulfilled resolved \n");
   } catch (error) {
     console.log(error);
+    console.log("Promise-5 is also fulfilled error \n");
   }
 }
 

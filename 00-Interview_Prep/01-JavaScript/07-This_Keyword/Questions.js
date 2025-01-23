@@ -16,10 +16,11 @@ user.method();
 function makeUser() {
   return {
     name: "Baabuu",
-    // Here `this` is pointing to global object
+
+    // --- Here `this` is pointing to global object ---
     // ref: this,
 
-    // To make it local
+    // --- To make it local ---
     ref() {
       return this;
     },
@@ -27,6 +28,7 @@ function makeUser() {
 }
 
 const obj = makeUser();
+// console.log(obj.ref.name);
 console.log(obj.ref().name, "\n");
 
 // ======= Question-3 ======= - What is the output ?
@@ -38,20 +40,24 @@ const person = {
   },
 };
 
-// It will give undefined because, when we pass the function as a callback to setTimeout, it is executed in the context of the global object. And it no longer has the reference to the person object.
-// setTimeout(person.logMessage, 1000);
+setTimeout(person.logMessage, 1000);
+// ----- This will give undefined because, when we pass the function as a callback to setTimeout, it is executed in the context of the global object. And it no longer has the reference to the person object.
 
-// To fix this
-// setTimeout(function () {
-//   person.logMessage();
-// }, 1000);
+// ----- To fix the above issue -----
+setTimeout(function () {
+  person.logMessage();
+}, 1000);
 
 // ======= Question-4 ======= - Create a object calculator
 
 let calculator = {
   read() {
-    this.a = 10;
-    this.b = 20;
+    // ----- For Browser -----
+    // this.a = +prompt("Eneter a:");
+    // this.b = +prompt("Enter b:");
+
+    this.a = 20;
+    this.b = 10;
     console.log(this.a, this.b);
   },
 
@@ -73,23 +79,25 @@ console.log("Mul: ", calculator.mul(), "\n");
 // In Node.js environment var type variable is not available in global scope, But in browser it is available. And we can access it using `this` keyword.
 var length = 11;
 function callback() {
-  console.log(this.length, "\n");
+  console.log(this.length);
 }
 
 const obj3 = {
   length: 88,
   method(cb) {
-    // Here incoming cb function is pointing to global object, not the obj3 object.
+    // ----- Here incoming cb function is pointing to global object, not the obj3 object -----
     cb();
   },
   secondMethod() {
     console.log(arguments);
+    // ----- Now here it will be considering the lenght of the array, and printing 4 -----
     arguments[0]();
   },
 };
 
 obj3.method(callback);
 obj3.secondMethod(callback, 10, 12, 14);
+console.log("\n");
 
 // ======= Question-6 =======
 
@@ -115,4 +123,4 @@ const calc = {
 
 // Implement the code
 const result = calc.add(5).multiply(6).subs(10).add(7);
-console.log(result.total);
+console.log("Total: ", result.total, "\n");

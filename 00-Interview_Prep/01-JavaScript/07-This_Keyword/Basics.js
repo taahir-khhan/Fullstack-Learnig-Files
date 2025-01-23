@@ -18,22 +18,26 @@ const user = {
     },
   },
 };
+
 user.getDetails();
 user.childobj.details();
 
 // ====== In case of arrow function, `this` is pointing to the global object ======
+
 const user2 = {
-  name: "JJ",
+  name: "Adhira",
   detail: () => console.log(this.name, "\n"),
 };
+
 user2.detail();
 
 const user3 = {
-  name: "LL",
+  name: "Bhidu",
   func: function () {
-    // ====== Now in nested arrow function, `this` to current object ======
+    // ====== When arrow function is nested inside a normal function, then only "this" keyword points to the current object ======
     const nestedArrow = () => console.log(this.name);
     nestedArrow();
   },
 };
+
 user3.func();
