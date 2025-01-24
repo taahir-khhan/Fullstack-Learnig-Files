@@ -1,4 +1,5 @@
-// ======== Question-1 ======== - Object Referencing
+// ----- Question1 ----- (Object Referencing)
+
 let c = { greet: "Hey!" };
 let d = c;
 d.greet = "Hello";
@@ -6,16 +7,18 @@ d.greet = "Hello";
 console.log(c);
 console.log(d, "\n");
 
-// ======== Question-2 ======== - All the objects are passed by reference, so when we change the value of original object it will reflect in wherever it is passed.
+// ----- Question2 ----- (All the objects are passed by reference, so when we change the value of original object it will reflect in wherever it is passed)
+
 let x = { name: "Tahir" };
 let y = [x];
-x.name = "kkk";
-y.name = "Shoyeb"; // This will a property of "name" in array of object
+x.name = "Chada";
+y.name = "Shoyeb"; // It will add the "name" property inside the array of object.
 
 console.log(x);
 console.log(y, "\n");
 
-// ======== Question-3 ========
+// ----- Question3 -----
+
 const value = { number: 10 };
 
 function multiply(x = { ...value }) {

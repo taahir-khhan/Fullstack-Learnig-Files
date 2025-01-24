@@ -3,6 +3,7 @@ import { serve } from "bun";
 const server = serve({
   fetch(request) {
     const url = new URL(request.url);
+
     if (url.pathname === "/") {
       return new Response("It's Bun Baby", { status: 200 });
     } else if (url.pathname === "/december") {

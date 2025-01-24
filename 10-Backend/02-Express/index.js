@@ -7,8 +7,8 @@ const app = express();
 const port = process.env.PORT || 7000;
 app.use(express.json());
 
+// ----- Custom Logger -----
 const morganFormat = ":method :url :status :response-time ms";
-
 app.use(
   morgan(morganFormat, {
     stream: {
@@ -28,7 +28,7 @@ app.use(
 const userData = [];
 let id = 100;
 
-// add the users
+// ----- Add the users -----
 app.post("/users", (req, res) => {
   const { name, address } = req.body;
   const newUser = { userId: id++, name, address };
@@ -36,7 +36,7 @@ app.post("/users", (req, res) => {
   res.status(200).send(newUser);
 });
 
-// Get the list of users
+// ----- Get the list of users -----
 app.get("/users", (req, res) => {
   if (userData.length === 0) {
     res.status(404).send("User not found");
@@ -45,7 +45,7 @@ app.get("/users", (req, res) => {
   res.status(202).send(userData);
 });
 
-// Get user by id
+// ----- Get user by id -----
 app.get("/users/:id", (req, res) => {
   const user = userData.find((item) => item.userId === parseInt(req.params.id));
   if (!user) {
@@ -54,7 +54,7 @@ app.get("/users/:id", (req, res) => {
   res.status(200).send(user);
 });
 
-// Update a user
+// ----- Update a user -----
 app.put("/users/:id", (req, res) => {
   const user = userData.find((item) => item.userId === parseInt(req.params.id));
 
@@ -68,7 +68,7 @@ app.put("/users/:id", (req, res) => {
   res.status(202).send(user);
 });
 
-//Delete a user
+// ----- Delete a user -----
 app.delete("/users/:id", (req, res) => {
   const index = userData.findIndex(
     (item) => item.userId === parseInt(req.params.id)

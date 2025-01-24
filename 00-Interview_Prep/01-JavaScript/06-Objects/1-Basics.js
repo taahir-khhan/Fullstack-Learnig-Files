@@ -1,4 +1,5 @@
-// Object Literals
+// ========= Object Literals =========
+
 const user = {
   name: "Tahir",
   "full name": "Tahir Khan",
@@ -9,27 +10,33 @@ const user = {
   },
 };
 
-// ======== Access ========
-console.log(user.name);
+// ---- Access ----
+
+console.log("Acessing Object property values:\n", user.name);
 console.log(user["name"]);
 // console.log(user.full name);  // Not possible
-console.log(user["full name"]); // Only way of accessing
+console.log(user["full name"], "\n"); // Only way of accessing
 
-// ======== Modify ========
+// ---- Modify ----
+
 user.age = 23;
-console.log(user.age); // in both way possible
+console.log("Modifications:\n", user.age); // in both way possible
 user["age"] = 24;
 console.log(user.age, "\n");
 
-// ======== Delete ========
-delete user.age;
-console.log(user, "\n");
+// ---- Delete ----
 
-// ======== Object methods call ========
+delete user.age;
+console.log("Deletion:\n", user, "\n");
+
+// ---- Object methods call ----
+
+console.log("Object Method call and reference:");
 user.greeting();
 console.log(user.greeting, "\n");
 
-// ======== Nested objects ========
+// ---- Nested objects ----
+
 const address = {
   street: "123 Main St",
   city: "Exampleville",
@@ -42,4 +49,4 @@ const person = {
   address: address,
 };
 
-console.log(person.address.street);
+console.log("Nested objects property access: \n", person.address.street);

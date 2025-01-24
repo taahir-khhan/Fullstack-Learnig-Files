@@ -1,31 +1,24 @@
 /* ============ Synchronous vs Asynchronous JavaScript ============ 
 
-      - Synchronous code is executed in sequence – each statement waits for the previous statement to finish before executing.
+  - Synchronous code is executed in sequence – each statement waits for the previous statement to finish before executing.
 
-      - Asynchronous is not the core feature of JavaScript, but it is provided by the browser APIs and Node.js. It allows JavaScript to execute other code while waiting for asynchronous code to finish executing.
+  - Asynchronous is not the core feature of JavaScript, but it is provided by the browser APIs and Node.js. It allows JavaScript to execute other codes in asynchronous manner.
 
-      - JavaScript is single-threaded, meaning that two bits of script cannot run at the same time; they have to run one after another. This is why JavaScript is asynchronous.
+  - JavaScript is single-threaded, meaning that two bits of script cannot run at the same time; they have to run one after another. This is why JavaScript is Synchronous.
 */
 
-console.log("First");
-
 function doSomeWork(message) {
+  // ----- The setTimeout does not return anything by using the return keyword, instead By default it returns a timer ID, which is useful in case of clearTimeout() -----
   setTimeout(() => {
+    // ----- The return inside the callback is ignored, it does not affect the setTimeout function -----
     return "This is the message: " + message;
   }, 500);
 }
 
 const message = doSomeWork("Hello World");
-console.log(message); // What will this output?
+console.log("Output ? :", message, "\n");
 
-console.log("Last \n");
-
-// Here when message is logged, it will be undefined because the function doSomeWork is asynchronous and the message is returned after 1 second. So, the message is logged before the message is returned.
-
-// To fix this
-
-console.log("Third");
-
+// ----- To print the message-----
 function doSomeMoreWork(message, cb) {
   setTimeout(() => {
     cb(`This is the second message: ${message} \n`);
@@ -35,8 +28,6 @@ function doSomeMoreWork(message, cb) {
 const messageTwo = doSomeMoreWork("Hii Everyone", function (value) {
   console.log(value);
 });
-
-console.log("Fourth");
 
 // ========== Callback Hell ==========
 // The simple goal here is, the function should execute in this manner learnBasics -> learnHTML -> learnCSS etc.
