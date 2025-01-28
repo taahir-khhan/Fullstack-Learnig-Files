@@ -38,7 +38,7 @@ const generateAccessAndRefreshToken = async (userId) => {
 const registerUser = asyncHandler(async (req, res) => {
   const { fullname, username, email, password } = req.body;
 
-  // Vallidation
+  // --- Vallidation ---
   if (
     [fullname, username, email, password].some((field) => field?.trim() === "")
   ) {
@@ -59,8 +59,6 @@ const registerUser = asyncHandler(async (req, res) => {
   const avatarLocalPath = req.files?.avatar?.[0]?.path;
   const coverImageLocalPath = req.files?.coverImage?.[0]?.path;
 
-  console.log(avatarLocalPath, coverImageLocalPath);
-
   let avatar;
   try {
     avatar = await uploadFilesonCloudinary(avatarLocalPath);
@@ -80,7 +78,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 
   try {
-    // Construct a user
+    // --- Construct a user ---
     const user = await User.create({
       fullname,
       avatar: avatar.url,
@@ -90,7 +88,7 @@ const registerUser = asyncHandler(async (req, res) => {
       username: username.toLowerCase(),
     });
 
-    // Select all the data of user, but not the password and refreshToken
+    // --- Select all the data of user, but not the password and refreshToken ---
     const createdUser = await User.findById(user._id).select(
       "-password -refreshToken"
     );

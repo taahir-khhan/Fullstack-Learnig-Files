@@ -7,7 +7,7 @@ import logger from "./logger.js";
 const app = express();
 
 /*
-  - Allows only the specified domain (or domains) in the CORS_ORIGIN environment variable to access the application. If CORS_ORIGIN is set to *, it allows all origins.
+  - Purpose: Configures Cross-Origin Resource Sharing (CORS) to allow or restrict client applications from making requests to your backend application.
   
   - Why This Matters: Helps prevent unauthorized access to the application by restricting which front-end applications can access its resources.
 */
@@ -18,14 +18,13 @@ app.use(
   })
 );
 
-// common middleware
+// ------ common middleware ------
 app.use(express.json({ limit: "16kb" }));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(cookieParser());
 
 const morganFormat = ":method :url :status :response-time ms";
-
 app.use(
   morgan(morganFormat, {
     stream: {
@@ -42,12 +41,12 @@ app.use(
   })
 );
 
-// import routes
+// ------ import routes ------
 import { errorHandler } from "./middlewares/error.middlewares.js";
 import healthcheckRouter from "./routes/healthcheck.routes.js";
 import userRouter from "./routes/user.routes.js";
 
-// routes
+// ------ routes ------
 app.use("/api/v1/healthcheck", healthcheckRouter);
 app.use("/api/v1/users", userRouter);
 app.use(errorHandler);

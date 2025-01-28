@@ -4,7 +4,7 @@ import fs from "fs";
 
 dotenv.config();
 
-// My own cloudinary configuration
+// ------ My own cloudinary configuration ------
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -18,7 +18,7 @@ const uploadFilesonCloudinary = async (localFilePath) => {
       resource_type: "auto",
     });
     console.log(`File uploaded on cloudinary. File src: ${response.url}`);
-    // once file is uploaded, we would like to delete from our own server
+    // ------ Once file is uploaded, we would like to delete from our own server ------
     fs.unlinkSync(localFilePath);
     return response;
   } catch (error) {
