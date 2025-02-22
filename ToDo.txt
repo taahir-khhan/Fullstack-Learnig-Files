@@ -1,2 +1,0 @@
-Cover Questions in Objects
-Then covering more about promises in javascript.
