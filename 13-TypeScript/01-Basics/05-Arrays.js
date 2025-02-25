@@ -1,36 +1,25 @@
-const superPoets: string[] = ["Jawed Sahab"];
+var superPoets = ["Jawed Sahab"];
 superPoets.push("Mirza Galib");
 superPoets.push("Alama Iqbal");
 superPoets.push("Jaun Elia");
-console.log(superPoets, "/n");
-
-const thierRating: number[] = [10];
+console.log(superPoets, "\n");
+var thierRating = [10];
 thierRating.push(9);
 thierRating.push(9.5);
-console.log(thierRating, "/n");
-
+console.log(thierRating, "\n");
 // Another way of declaring array of type
-const thinkers: Array<string> = [];
+var thinkers = [];
 thinkers.push("Jawed Sahab");
 thinkers.push("Anurag Kashyap");
-console.log(thinkers, "/n");
-
-type User = {
-  name: string;
-  age: number;
-};
-
-const enrolledStudents: Array<User> = [];
+console.log(thinkers, "\n");
+var enrolledStudents = [];
 enrolledStudents.push({ name: "JaiDeep Alhawat", age: 45 });
 enrolledStudents.push({ name: "Nawauddin Sidiqui", age: 53 });
-console.log(enrolledStudents, "/n");
-
+console.log(enrolledStudents, "\n");
 // Using 2D Array
-const matrix: Array<Array<string>> = [
+var matrix = [
   ["a", "b", "c"],
   ["d", "e", "f", "g"],
   ["h", "i", "j", "k", "l"],
 ];
 console.log(matrix);
-
-export {};

@@ -1,19 +1,16 @@
-// String variable with type annotation
+// String, number & boolean variable with type annotation
 const greeting: string = "Hello Tahir";
 console.log(greeting);
-console.log(greeting.toUpperCase());
 
-// Number variable with type annotation
 const myNum: number = 786;
 console.log(myNum + greeting);
 
-// Boolean variable with type annotation
 let isLoggedIn: boolean = true;
-console.log(isLoggedIn.valueOf()); // true
+console.log(isLoggedIn.valueOf());
 
-// TypeScript infers types, so annotations aren't always needed
+// When we assign the value to a variable after declaring it, At that time it is not a good practice to use annotation, Because TypeScript is smart enough to infers types automatically. There are other use cases of type annotation.
 
-// 'any' type allows any value
+// 'any' type allows any value - that means 'hero' variable will store any type of value in future,
 let hero;
 function apiCall() {
   return "Heloo";

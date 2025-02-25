@@ -10,27 +10,6 @@
 // Simple Example: Without TypeScript (JavaScript)
 const user = { name: "tahir", age: 23 };
 console.log(user.name);
-// console.log(user.age.toUpperCase()); // No error until runtime - blows up!
-
-// With TypeScript: Explicit typing
-interface User {
-  name: string;
-  age: number;
-}
-
-const typedUser: User = { name: "tahir", age: 23 };
-console.log(typedUser.name);
-// console.log(typedUser.age.toUpperCase()); // Error: 'toUpperCase' doesn't exist on number
-
-// Practical Example: Function with type safety
-function greet(person: User, greeting: string): string {
-  return `${greeting}, ${person.name}! You are ${person.age} years old.`;
-}
-// Works fine
-console.log(greet(typedUser, "Hello"));
-
-// Errors caught by TypeScript:
-// greet(typedUser, 123); // Error: Argument 'number' not assignable to 'string'
-// greet({ name: "ali", age: "30" }, "Hi"); // Error: 'age' must be number
+// console.log(user.age.toUpperCase()); // No error until runtime - blows up, But in TypeScript it catches the error while writing this line. Because we can't convert the number type into UpperCase.
 
 export {};
