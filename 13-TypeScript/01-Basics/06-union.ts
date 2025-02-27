@@ -38,7 +38,7 @@ function getUserId(id: number | string) {
   // id.toLowerCase() // Here the id type is 'number | string' and it can't execute this line
 
   if (typeof id === "string") {
-    // But if we check before doing this specific type operation, Now it is allowed
+    // But if we type check before doing this specific type operation, Now it is allowed
     console.log(id.toUpperCase());
   }
 
