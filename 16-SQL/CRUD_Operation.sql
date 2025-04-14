@@ -54,3 +54,96 @@ SELECT * FROM chai_store;
 DELETE FROM chai_store
 WHERE chai_name = 'Black Chai';
 
+-- All the commands in SQL is devided into different categories based on their operation they perform.
+
+/* 1) DDL (Data Defination Language)
+      - DDL is used to dfine and manage database objects like tables, indexes, views, etc.
+      - DDL commands deal with structure and schema of the database.
+
+      //  ==== Commands ===
+      - CREATE craetes a new database object (e.g. table, index, view).
+      - ALTER modifies an existing object (e.g. adds/removes columns, changes)
+      - DROP deletes an object (e.g. table, index).
+      - TRUNCATE removes all rows from a table but keeps the structure.
+      - RENAME Rename an existing object (e.g. table, column).
+*/
+
+-- Add new column into the table
+ALTER TABLE chai_store 
+ADD stocks INT DEFAULT 0;
+
+-- Modify the existing column datatype on the table
+ALTER TABLE chai_store
+ALTER COLUMN price TYPE DECIMAL(12, 2);
+
+-- delete some column from the table
+ALTER TABLE chai_store
+DROP COLUMN available;
+
+-- delete the whole table
+DROP TABLE chai_store;
+
+-- Delete the data of the table, without deleting the structure of the table
+TRUNCATE TABLE chai_store;
+
+-- Rename the table name
+ALTER TABLE chai_store 
+RENAME TO product_store;
+
+-- Rename the column of a table
+ALTER TABLE chai_store 
+RENAME COLUMN chai_name TO product_name;
+
+/* 2) DML (Data Manipulation Language)
+      - DML  commands deals with the manipulation of data inside the table.
+
+      // === Commands ===
+      - INSERT insert new data into a table
+      - UPDATE modifies existing data in a table
+      - DELETE removes rows from a table
+      - SELECT retrieves data from the table
+*/
+
+INSERT INTO products(p_name, price, stock)
+VALUES ('T-shirt', 500.00, 12);
+
+UPDATE products
+SET price = 800.00
+WHERE p_name = 'T-shirt';
+
+DELETE FROM products
+WHERE p_name = 'T-shirt';
+
+SELECT * FROM products;
+
+/* 3) DCL (Data Control Language)
+      - DCL commands deals with granting and revoking privileges on the database.
+
+      // === commands ===
+      - GRANT gives privileges to users or roles.
+      - REVOKE takes away privileges from users or roles
+*/
+
+-- tahir have access to select the data from products table.
+GRANT SELECT ON products TO tahir;
+
+-- Sales team have access to insert and update the products table data.
+GRANT INSERT, UPDATE ON products TO sales_team;
+
+-- Revoke the access of tahir and sales_team
+REVOKE SELECT ON products FROM tahir;
+REVOKE INSERT, UPDATE ON products FROM sales_team;
+
+/* 4) TCL (Transaction Control Language)
+      - TCL commands deal with transaction management in the database. Transaction ensure that a series of DML statements are executed successfully or not at all(Atomicity).
+
+      - In the modern ORM, it already taken care, we don't have to worry about this things
+
+      // === Commands ===
+      - BEGIN starts a transaction
+      - COMMIT saves changes made during the transaction
+      - ROLLBACK Undoes changes during the transaction
+      - SAVEPOINT Sets a point to which a transaction can be rolled back.
+*/
+
+
